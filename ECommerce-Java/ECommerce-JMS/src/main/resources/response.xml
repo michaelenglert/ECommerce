@@ -1,0 +1,124 @@
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+	<soap:Body>
+		<ProcessResponse>
+			<Payload>
+				<p_out>
+					<trans_code>NB-QUOTE</trans_code>
+					<other_msg>
+						The application CWA premium submitted = 0.00,
+						the actual CWA premium amount currently
+						calculated by the system = 30,000.00, the
+						difference in submitted and calculated premium =
+						-30,000.00.|The cwa amount of 0.00 is less than
+						the required cwa amount of 30,000.00.--
+					</other_msg>
+					<base_dtl>
+						
+					</base_dtl>
+					</p_out>
+			 </Payload>
+		</ProcessResponse>
+		</soap:Body>
+</soap:Envelope>			 		
+
+
+
+
+<response>
+
+<Errors>
+<Error_1></Error_1>
+</Errors>
+<Benefit_Illustrations>
+	<Benefit_Illustration>
+		<Policy_Year>
+		
+		</Policy_Year>
+		<Annualized_Premium>
+		
+		</Annualized_Premium>
+		<Premium_Allocation_Charge>
+		
+		</Premium_Allocation_Charge>
+		<Amount_Available_for_Investment_from_prem>
+		
+		</Amount_Available_for_Investment_from_prem>
+		<Policy_Administration_Charge>
+		
+		</Policy_Administration_Charge>
+		
+		<Assumed_Investment_Return_6_pa>
+			<Fund_Management_Charge>
+		
+			</Fund_Management_Charge>
+			<Other_Charges>
+		
+			</Other_Charges>
+			<Total_Charges>
+		
+			</Total_Charges>
+			<Addition_to_Fund_if_any>
+		
+			</Addition_to_Fund_if_any>
+			<Fund_Value_at_end>
+		
+			</Fund_Value_at_end>
+			<Surrender_Value_at_end>
+		
+			</Surrender_Value_at_end>
+			<Death_Benefit>
+		
+			</Death_Benefit>
+		</Assumed_Investment_Return_6_pa>
+		<Assumed_Investment_Return_10_pa>
+			<Fund_Management_Charge>
+		
+			</Fund_Management_Charge>
+			<Other_Charges>
+		
+			</Other_Charges>
+			<Total_Charges>
+		
+			</Total_Charges>
+			<Addition_to_Fund_if_any>
+		
+			</Addition_to_Fund_if_any>
+			<Fund_Value_at_end>
+		
+			</Fund_Value_at_end>
+			<Surrender_Value_at_end>
+		
+			</Surrender_Value_at_end>
+			<Death_Benefit>
+		
+			</Death_Benefit>
+		</Assumed_Investment_Return_10_pa>
+</Benefit_Illustration>
+</Benefit_Illustrations>
+<Annuity_Type>
+
+</Annuity_Type>
+<Payments_pa_6>
+
+</Payments_pa_6>
+<Payments_pa_10>
+
+</Payments_pa_10>
+<Premium_Allocation_Charge>
+<Year_1></Year_1>
+<Year_2></Year_2>
+<Year_3></Year_3>
+<Top_up_Premium></Top_up_Premium>
+</Premium_Allocation_Charge>
+<Fund_Management_Charge>
+<Pension_Secure_Fund></Pension_Secure_Fund>
+<Pension_Debt_Fund></Pension_Debt_Fund>
+<Pension_Balanced_Fund></Pension_Balanced_Fund>
+<Pension_IndexFund></Pension_IndexFund>
+<Pension_Enhanced_Equity_Fund></Pension_Enhanced_Equity_Fund>
+<PAC></PAC>
+</Fund_Management_Charge>
+
+</response>

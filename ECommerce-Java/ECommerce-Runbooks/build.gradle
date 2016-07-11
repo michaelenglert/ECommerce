@@ -1,0 +1,32 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin:'application'
+
+sourceCompatibility=1.7
+
+idea {
+    module {
+        jdkName = "1.7"
+    }
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+        }
+    }
+}
+
+
+mainClassName = 'com.appdynamicspilot.runbook.ResetConnectionPoolAction'
+
+
+task uberjar(type: Jar, dependsOn: 'build') {
+    from files(sourceSets.main.output.classesDir)
+    from configurations.runtime.asFileTree.files.collect { zipTree(it) }
+
+    manifest {
+        attributes 'Main-Class': mainClassName
+    }
+}

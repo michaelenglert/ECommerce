@@ -1,0 +1,304 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    top: 0px;
+}
+
+table.layoutMain {
+    border-collapse: collapse;
+    border-spacing: 0px;
+    border: none;
+    width: 1000px;
+    text-align: center;
+}
+
+table.layoutMain td {
+    border-collapse: collapse;
+    border-spacing: 0px;
+    border: none;
+}
+
+table.others {
+    border-collapse: collapse;
+    border-spacing: 0px;
+    width: 400px;
+    text-align: center;
+}
+
+table.others td {
+    border-collapse: collapse;
+    border-spacing: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    text-align: left;
+    color: #4a4a4a;
+}
+
+table.others2 {
+    border-collapse: collapse;
+    border-spacing: 0px;
+    width: 500px;
+    text-align: center;
+}
+
+table.others2 td {
+    border-collapse: collapse;
+    border-spacing: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    text-align: center;
+    color: #4a4a4a;
+    padding: 5px 0px 5px 0px;
+    font-weight: bold;
+}
+
+table.others2 tr:hover {
+    background: #eef6f9;
+}
+
+.tdPadding {
+    padding-left: 20px;
+}
+
+div.headerMain {
+    width: 100%;
+    float: left;
+    background: url(../images/header_img.gif);
+    background-repeat: repeat-x;
+    height: 83px;
+}
+
+div.logo {
+    width: 255px;
+    float: left;
+    margin: 14px 0px 0px 16px;
+}
+
+div.loginBoxMain {
+    width: 430px;
+    margin: 0 auto;
+}
+
+div.loginBox {
+    width: 420px;
+    float: left;
+}
+
+div.tlc, .trc, .blc, .brc, .trc2, .tlc2 {
+    background-color: transparent;
+    background-repeat: no-repeat;
+}
+
+div.tlc {
+    background-image: url(../images/appdynamics_pilot_10.gif);
+    background-position: 0% 0%;
+}
+
+div.trc {
+    background-image: url(../images/appdynamics_pilot_15.gif);
+    background-position: 100% 0%;
+}
+
+div.blc {
+    background-image: url(../images/appdynamics_pilot_24.gif);
+    background-position: 0% 100%;
+}
+
+div.brc {
+    background-image: url(../images/appdynamics_pilot_28.gif);
+    background-position: 100% 100%;
+}
+
+div.tb, .bb, .tb2 {
+    background-color: transparent;
+    background-repeat: repeat-x;
+}
+
+div.tb {
+    background-image: url(../images/appdynamics_pilot_12.gif);
+    background-position: 0% 0%;
+}
+
+div.bb {
+    background-image: url(../images/appdynamics_pilot_22-09.gif);
+    background-position: 50% 100%;
+}
+
+div.rb {
+    background-image: url(../images/appdynamics_pilot_22.gif);
+    background-position: 100% 0%;
+    background-repeat: repeat-y;
+}
+
+div.lb {
+    background-color: #ffffff;
+    background-image: url(../images/appdynamics_pilot_13.gif);
+    background-position: 0% 100%;
+    background-repeat: repeat-y;
+}
+
+div.loginContent {
+    width: 410px;
+    padding: 10px;
+}
+
+div.errorMessage {
+    width: 300px;
+    float: left;
+    margin-left: 55px;
+    _margin-left: 30px;
+    height: 30px;
+}
+
+.b1, .b2, .b3, .b4 {
+    font-size: 1px;
+    overflow: hidden;
+    display: block;
+}
+
+.b1 {
+    height: 1px;
+    background: #dbedfa;
+    margin: 0 5px;
+}
+
+.b2 {
+    height: 1px;
+    background: #dbedfa;
+    border-right: 2px solid #dbedfa;
+    border-left: 2px solid #dbedfa;
+    margin: 0 3px;
+}
+
+.b3 {
+    height: 1px;
+    background: #dbedfa;
+    border-right: 1px solid #dbedfa;
+    border-left: 1px solid #dbedfa;
+    margin: 0 2px;
+}
+
+.b4 {
+    height: 2px;
+    background: #dbedfa;
+    border-right: 1px solid #dbedfa;
+    border-left: 1px solid #dbedfa;
+    margin: 0 1px;
+}
+
+.contentb {
+    background: #dbedfa;
+    border-right: 1px solid #dbedfa;
+    border-left: 1px solid #dbedfa;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #f74211;
+}
+
+.contentb div {
+    margin-left: 1px;
+}
+
+.input {
+    width: 197px;
+    height: 22px;
+    border: solid 1px #d7d7d7;
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    padding-left: 3px;
+}
+
+.submit {
+    width: 92px;
+    height: 24px;
+    color: #000000;
+    border: none;
+    background: url(../images/appdynamics_pilot_25.gif);
+    background-repeat: no-repeat;
+}
+
+div.footer {
+    width: 1000px;
+    float: left;
+    border-top: solid 2px #afadad;
+    border-bottom: solid 2px #2970ab;
+    height: 2px;
+    margin-bottom: 4px;
+}
+
+.footerText {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #bebfb8;
+}
+
+div.categoriesBoxMain {
+    width: 525px;
+    margin: 0 auto;
+}
+
+div.categoriesBox {
+    width: 515px;
+    float: left;
+}
+
+div.categoriesContent {
+    width: 515px;
+    padding-top: 7px;
+    padding-bottom: 10px;
+}
+
+div.tableHead {
+    width: 501px;
+    height: 37px;
+    background: url(../images/appdynamics_pilot_21.gif);
+    background-repeat: repeat-x;
+    margin-left: 7px;
+    _margin-left: 0px;
+}
+
+div.tableHead ul {
+    float: left;
+    margin: 0px;
+    padding: 5px 0px 0px 0px;
+    _padding: 10px 0px 0px 0px;
+}
+
+div.tableHead ul li {
+    display: inline;
+    list-style: none;
+    margin: 0px;
+    padding: 0px 60px 0px 60px;
+    _padding: 0px 60px 0px 58px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color: #000000;
+}
+
+div.buttonClass {
+    width: 92px;
+    margin: 0 auto;
+    padding: 10px 0px 10px 0px;
+}
+
+div.headerMain span {
+    float: right;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+.logout {
+    color: #FFFFFF;
+    text-align: right;
+    width: 100%;
+    float: left;
+    cursor: pointer;
+    text-decoration: underline;
+}

@@ -1,0 +1,37 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin:'application'
+
+sourceCompatibility=1.7
+
+idea {
+    module {
+        jdkName = "1.7"
+    }
+}
+dependencies {
+    compile project(':ECommerce-Shared');
+    compile 'com.amazonaws:aws-java-sdk-sqs:1.9.30';
+}
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+        }
+    }
+}
+
+
+mainClassName = 'com.appdynamicspilot.sqs.FulfillmentClient';
+
+
+task uberjar(type: Jar, dependsOn: 'build') {
+    from files(sourceSets.main.output.classesDir)
+    from('../ECommerce-Shared/build/classes/main')
+    from configurations.runtime.asFileTree.files.collect { zipTree(it) }
+    exclude 'META-INF/*.DSA', 'META-INF/*.RSA', 'META-INF/*.SF'
+    manifest {
+        attributes 'Main-Class': mainClassName
+    }
+
+}

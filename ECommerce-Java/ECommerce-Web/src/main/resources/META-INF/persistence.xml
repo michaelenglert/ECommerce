@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+                                 http://java.sun.com/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+
+    <persistence-unit name="pu" transaction-type="RESOURCE_LOCAL">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <class>com.appdynamicspilot.model.Cart</class>
+        <class>com.appdynamicspilot.model.Item</class>
+        <class>com.appdynamicspilot.model.User</class>
+        <class>com.appdynamicspilot.model.Fault</class>
+        <properties>
+            <property name="eclipselink.weaving" value="false"/>
+        </properties>
+    </persistence-unit>
+
+</persistence>

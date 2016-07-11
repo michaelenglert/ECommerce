@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+    <Resource name="jdbc/OracleECommerceDB" auth="Container" type="javax.sql.DataSource" maxTotal="100" maxIdle="5" maxWait="100" jmxEnabled="true" username="world" password="world" driverClassName="oracle.jdbc.OracleDriver" url="jdbc:oracle:thin://@oracle-db:1521:XE"/>
+</Context>

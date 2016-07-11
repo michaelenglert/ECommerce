@@ -1,0 +1,148 @@
+<html>
+<head>
+    <title>AppDynamics Pilot</title>
+    <link rel="stylesheet" href="css/appdynamicsPilot.css" media="all">
+</head>
+<body>
+<table class="layoutMain" align="center">
+    <tr>
+        <td>
+            <div class="headerMain">
+                <div class="logo">
+                    <img src="images/logo.gif" border="0">
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td style="padding-top: 30px;">
+            <!--login box-->
+            <!-- <div class="loginBoxMain">
+                <div class="errorMessage">
+                    <div id="errorMessage" style="display: none;">
+                        <b class="b1"></b><b class="b2"></b><b class="b3"></b><b class="b4"></b>
+                            <div class="contentb" id="printMessage">
+                                Invalid login Name
+                            </div>
+                         <b class="b4"></b><b class="b3"></b><b class="b2"></b><b class="b1"></b>
+                    </div>
+                </div>
+
+                <div class="loginBox">
+                    <div class="lb" >
+                    <div class="rb" >
+                    <div class="bb" ><div class="blc" ><div class="brc" >
+                    <div class="tb" ><div class="tlc" ><div class="trc" >
+                        <div class="loginContent">
+                            <table class="others" border="0">
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td width="180" class="tdPadding" height="40">Login name</td>
+                                        <td width="220"><input type="text" class="input" id="textBox"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td  class="tdPadding" height="40">Password</td>
+                                        <td><input type="password" class="input" id="password"/></td>
+                                    </tr>
+                                        <tr>
+                                        <td></td>
+                                        <td><input type="submit" class="submit" value="Login" onclick="validateLogin();" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        <td></td>
+                                    </tr>
+                                </table>
+                        </div>
+                    </div></div></div>
+                    </div></div></div>
+                    </div>
+                    </div>
+                </div>
+            </div> -->
+            <!--login box-->
+            <!--page 2 box-->
+            <div class="categoriesBoxMain">
+                <div class="categoriesBox">
+                    <div class="lb">
+                        <div class="rb">
+                            <div class="bb">
+                                <div class="blc">
+                                    <div class="brc">
+                                        <div class="tb">
+                                            <div class="tlc">
+                                                <div class="trc">
+                                                    <div class="categoriesContent">
+                                                        <div class="tableHead">
+                                                            <ul>
+                                                                <li>Item Id</li>
+                                                                <li>Item Title</li>
+                                                                <li>Select</li>
+                                                            </ul>
+                                                        </div>
+                                                        <table class="others2" border="0" align="center">
+                                                            <tr>
+                                                                <td width="167">1</td>
+                                                                <td width="167">Lorem ipsum dolor sit amet</td>
+                                                                <td width="166"><input type="checkbox"/></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>2</td>
+                                                                <td>consectetur adipisicing elit</td>
+                                                                <td><input type="checkbox"/></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>3</td>
+                                                                <td>sed do eiusmod tempor incididun</td>
+                                                                <td><input type="checkbox"/></td>
+                                                            </tr>
+                                                        </table>
+                                                        <div class="buttonClass"><input type="submit" class="submit"
+                                                                                        value="Add to cart"/></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--page 2 box-->
+        </td>
+    </tr>
+    <tr>
+        <td style="padding-top: 100px;">
+            <div class="footer"></div>
+            <div class="footerText">All rights reserved. Copyright amprice 2008.</div>
+        </td>
+    </tr>
+</table>
+<image src="<% request.getContextPath %>/fb.png"/>
+</body>
+</html>
+<script>
+    function validateLogin() {
+        if (document.getElementById('textBox').value == '') {
+            document.getElementById('errorMessage').style.display = '';
+            document.getElementById('printMessage').innerHTML = 'Invalid login name';
+            //alert("Enter Login Name");
+            document.getElementById('textBox').focus();
+            return true;
+        }
+
+        if (document.getElementById('password').value == '') {
+            document.getElementById('errorMessage').style.display = '';
+            document.getElementById('printMessage').innerHTML = 'Invalid password';
+            //alert("Enter Password");
+            document.getElementById('password').focus();
+            return false;
+        }
+    }
+
+</script>

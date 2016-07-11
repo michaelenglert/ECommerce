@@ -1,0 +1,122 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.appdynamics.inventory</groupId>
+	<artifactId>cart</artifactId>
+	<version>1.0</version>
+	<name>JAX-WS replacement for Apache CXF</name>
+	<build>
+		<directory>target</directory>
+		<finalName>${project.artifactId}</finalName>
+		<pluginManagement>
+	<plugins>
+		<plugin>
+			<groupId>org.jvnet.jax-ws-commons</groupId>
+			<artifactId>jaxws-maven-plugin</artifactId>
+			<version>2.1</version>
+			<executions>
+				<execution>
+					<id>generation</id>
+					<phase>process-classes</phase>
+					<goals>
+						<goal>wsgen</goal>
+					</goals>
+				</execution>
+				<execution>
+					<id>importing</id>
+					<phase>process-classes</phase>
+					<goals>
+						<goal>wsimport</goal>
+					</goals>
+				</execution>
+			</executions>
+			<configuration>
+				<genWsdl>true</genWsdl>
+				<keep>true</keep>
+				<sei>com.appdynamics.inventory.OrderServiceImpl</sei>
+				<sourceDestDir>target/generated-sources/artifacts</sourceDestDir>
+				<verbose>true</verbose>
+				<wsdlDirectory>target/jaxws/wsgen/wsdl</wsdlDirectory>
+				<wsdlFiles>
+					<wsdlFile>OrderServiceImplService.wsdl</wsdlFile>
+				</wsdlFiles>
+				<wsdlLocation>http://localhost:8080/cart/orderService?wsdl</wsdlLocation>
+				<packageName>com.appdynamics.inventory.ws</packageName>
+			</configuration>
+		</plugin>
+		<!-- <plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-jar-plugin</artifactId>
+			<executions>
+				<execution>
+					<id>package-wsclient-jars</id>
+					<phase>prepare-package</phase>
+					<goals>
+						<goal>jar</goal>
+					</goals>
+					<configuration>
+						<classesDirectory> target/generated-sources/artifacts,
+							target/jaxws/wsgen/wsdl
+						</classesDirectory>
+						<classifier>wsclient</classifier>
+					</configuration>
+				</execution>
+			</executions>
+		</plugin> -->
+	</plugins>
+</pluginManagement>
+	</build>
+
+	<dependencies>
+		<!-- <dependency> <groupId>com.sun.xml.ws</groupId> <artifactId>jaxws-tools</artifactId> 
+			<version>2.2.5</version> </dependency> -->
+		<dependency>
+			<groupId>org.jvnet.jax-ws-commons.spring</groupId>
+			<artifactId>jaxws-spring</artifactId>
+			<version>1.9</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.6</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>3.2.3.RELEASE</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.hibernate</groupId>
+					<artifactId>hibernate-core</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>4.3.7.Final</version>
+		</dependency>
+
+		<!-- Mysql connector j -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.33</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.persistence</groupId>
+			<artifactId>eclipselink</artifactId>
+			<version>2.5.2</version>
+		</dependency>
+
+
+	</dependencies>
+	<packaging>war</packaging>
+</project>

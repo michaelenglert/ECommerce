@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<!--suppress Struts2ModelInspection -->
+<struts>
+    <constant name="struts.objectFactory" value="org.apache.struts2.spring.StrutsSpringObjectFactory" />
+    <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+    <constant name="struts.action.excludePattern" value="/rest/.*,/crossapp" />
+
+	<package name="com.appdy.*" extends="struts-default" >
+		<interceptors>
+			<interceptor-stack name="commonStack">
+				<interceptor-ref name="paramsPrepareParamsStack"/>
+			</interceptor-stack>
+		</interceptors>		
+		
+		<action name="UserLogin" method="memberLogin"
+			class="com.appdynamicspilot.action.UserLoginAction">
+			<interceptor-ref name="commonStack" />
+			<result name="SUCCESS" type="redirectAction">ViewItems</result>
+			<result name="FAILURE">/WEB-INF/presentation/index.jsp</result>
+			<result name="LOGOUT" type="redirectAction">UserLogOut</result>
+		</action>
+		
+		<action name="UserLogOut" method="memberLogOut"
+			class="com.appdynamicspilot.action.UserLoginAction">
+			<interceptor-ref name="commonStack" />
+			<result name="SUCCESS">/WEB-INF/presentation/index.jsp</result>
+		</action>
+		
+		<action name="ViewItems" method="getAllItems"
+		class="com.appdynamicspilot.action.ItemAction">
+			<interceptor-ref name="commonStack" />
+			<result name="SUCCESS">/WEB-INF/presentation/items.jsp</result>
+			<result name="LOGOUT" type="redirectAction">UserLogOut</result>
+		</action>
+		
+		<action name="ViewItems2" method="getAllItems"
+		class="com.appdynamicspilot.action.CartAction2">
+			<interceptor-ref name="commonStack" />
+			<result name="SUCCESS">/WEB-INF/presentation/items.jsp</result>
+			<result name="LOGOUT" type="redirectAction">UserLogOut</result>
+		</action>
+		
+		<action name="ViewCart" class="com.appdynamicspilot.action.CartAction">
+			<interceptor-ref name="commonStack" />
+			<result name="SUCCESS">/WEB-INF/presentation/cart.jsp</result>
+			<result name="FAILURE" type="redirectAction">ViewItems</result>
+			<result name="LOGOUT" type="redirectAction">UserLogOut</result>
+			<result name="ENDPAGE">/WEB-INF/presentation/endPage.jsp</result>
+		</action>
+        
+        <action name="AsynCall" class="com.appdynamicspilot.action.AsynCallAction" method="createChildThread">
+            <interceptor-ref name="commonStack" />
+            <result name="SUCCESS">/WEB-INF/presentation/cart.jsp</result>
+            <result name="FAILURE" type="redirectAction">ViewItems</result>
+            <result name="LOGOUT" type="redirectAction">UserLogOut</result>
+            <result name="ENDPAGE">/WEB-INF/presentation/endPage.jsp</result>
+        </action>
+        
+        <action name="ProductSearch" class="com.appdynamicspilot.action.BTOverloadAction">
+            <interceptor-ref name="commonStack" />
+            <result name="SUCCESS">/WEB-INF/presentation/cart.jsp</result>
+            <result name="FAILURE" type="redirectAction">ViewItems</result>
+            <result name="LOGOUT" type="redirectAction">UserLogOut</result>
+            <result name="ENDPAGE">/WEB-INF/presentation/endPage.jsp</result>
+        </action>
+        
+        <action name="ViewPreference" class="com.appdynamicspilot.action.MemoryLeakAction" method="increase">
+            <interceptor-ref name="commonStack" />
+            <result name="SUCCESS">/WEB-INF/presentation/memoryLeak.jsp</result>
+            <result name="FAILURE" type="redirectAction">ViewItems</result>
+            <result name="LOGOUT" type="redirectAction">UserLogOut</result>
+            <result name="ENDPAGE">/WEB-INF/presentation/endPage.jsp</result>
+        </action>
+        
+        <action name="SavePreference" class="com.appdynamicspilot.action.MemoryLeakAction" method="clear">
+            <interceptor-ref name="commonStack" />
+            <result name="SUCCESS">/WEB-INF/presentation/memoryLeak.jsp</result>
+            <result name="FAILURE" type="redirectAction">ViewItems</result>
+            <result name="LOGOUT" type="redirectAction">UserLogOut</result>
+            <result name="ENDPAGE">/WEB-INF/presentation/endPage.jsp</result>
+        </action>
+		
+        <action name="DirectPayment">
+             <result>/WEB-INF/presentation/directPayment.jsp</result>
+        </action>
+	</package>
+</struts>

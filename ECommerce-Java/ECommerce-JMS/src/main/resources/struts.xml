@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<!--suppress Struts2ModelInspection -->
+<struts>
+	<package name="com.appdy.*" extends="struts-default" >
+		<interceptors>
+			<interceptor-stack name="commonStack">
+				<interceptor-ref name="paramsPrepareParamsStack"/>
+			</interceptor-stack>
+		</interceptors>		
+		<action name="UserLogin" method="memberLogin"
+			class="com.appdynamicspilot.action.UserLoginAction">
+			<interceptor-ref name="commonStack" />
+			<result name="SUCCESS" type="redirect-action">ViewItems</result>
+			<result name="FAILURE">/WEB-INF/presentation/index.jsp</result>
+			<result name="LOGOUT">/WEB-INF/presentation/index.jsp</result>
+		</action>
+		<action name="UserLogOut" method="memberLogOut"
+			class="com.appdynamicspilot.action.UserLoginAction">
+			<interceptor-ref name="commonStack" />
+			<result name="SUCCESS">/WEB-INF/presentation/index.jsp</result>
+		</action>
+		
+	</package>
+</struts>

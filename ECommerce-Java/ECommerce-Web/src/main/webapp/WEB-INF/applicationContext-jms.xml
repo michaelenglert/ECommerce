@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.0.xsd">
+  
+	<bean id="defaultDestination" class="org.apache.activemq.command.ActiveMQQueue">
+		<constructor-arg value="OrderQueue" />
+	</bean>
+	
+	<bean id="customerDestination" class="org.apache.activemq.command.ActiveMQQueue">
+		<constructor-arg value="CustomerQueue" />
+	</bean>
+
+	<!-- JMS 
+	<bean id="broker" class="org.apache.activemq.xbean.BrokerFactoryBean">
+    	<property name="config" value="classpath:org/apache/activemq/xbean/activemq.xml" />
+    	<property name="config" value="classpath:activemq.xml" />
+	    <property name="start" value="true" />
+	</bean>-->
+
+	<!-- a pooling based JMS provider -->
+	<bean id="jmsFactory" class="org.apache.activemq.pool.PooledConnectionFactory" destroy-method="stop">
+		<property name="connectionFactory">
+		<bean class="org.apache.activemq.ActiveMQConnectionFactory">
+			<property name="brokerURL"><value>${jmsBrokerUrl}</value></property>
+		</bean>
+		</property>
+	</bean>
+
+	<!-- Spring JMS Template -->
+	<bean id="proucerJmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+		<property name="connectionFactory"><ref local="jmsFactory"/></property>
+		<property name="defaultDestination">
+			<ref local="defaultDestination"/>
+		</property>
+	</bean>
+
+	<bean id="customerJmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+		<property name="connectionFactory"><ref local="jmsFactory"/></property>
+		<property name="defaultDestination">
+			<ref local="customerDestination"/>
+		</property>
+	</bean>
+
+
+	<!-- a sample POJO which uses a Spring JmsTemplate -->
+	<bean id="messageProducer" class="com.appdynamicspilot.jms.MessageProducer">
+		<property name="jmsTemplate"><ref bean="proucerJmsTemplate"></ref></property>
+	</bean>
+	
+	<!-- a sample POJO which uses a Spring JmsTemplate -->
+	<bean id="customerMessageProducer" class="com.appdynamicspilot.jms.CustomerMessageProducer">
+		<property name="jmsTemplate"><ref bean="customerJmsTemplate"></ref></property>
+	</bean>	
+<!--
+	<bean id="listenerContainer"
+                class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+                <property name="connectionFactory" ref="jmsFactory" />
+                <property name="destination" ref="defaultDestination" />
+        </bean>
+-->
+    <tx:annotation-driven proxy-target-class="true"/>
+</beans>

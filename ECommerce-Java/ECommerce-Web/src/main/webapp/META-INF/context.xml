@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+    <Resource name="jdbc/ECommerceDB" auth="Container" type="javax.sql.DataSource" maxTotal="100" maxIdle="5" maxWait="100" jmxEnabled="true" username="root" password="singcontroller" driverClassName="com.mysql.jdbc.Driver" url="jdbc:mysql://db:3306/appdy?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true"/>
+    <Resource name="jdbc/OracleECommerceDB" auth="Container" type="javax.sql.DataSource" maxTotal="100" maxIdle="5" maxWait="100" jmxEnabled="true" username="APPDY" password="APPDY" driverClassName="oracle.jdbc.OracleDriver" url="jdbc:oracle:thin://@oracle-db:1521:XE"/>
+</Context>

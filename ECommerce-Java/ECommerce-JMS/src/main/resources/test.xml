@@ -1,0 +1,122 @@
+<business-transactions>
+	<servlet-entry-points enabled="true">
+		<excludes></excludes>
+		<custom>
+			<transaction name="MyCartServletTransactions">
+				<servlet-rule>
+					<class-name filter-type="contains" inverse="true"
+						filter-value="Hello" />
+					<servlet-name filter-type="contains" inverse="true"
+						filter-value="Hello" />
+					<!--<host-name filter-type="startswith|endswith|contains|equals|regex" inverse="true|false"
+						filter-value=""/>
+						<port filter-type="startswith|endswith|contains|equals|regex" inverse="true|false"
+						filter-value=""/>-->
+					<!-- Both POST/Query Params. -->
+					<!-- <parameters>
+						<parameter match-type="check-for-existence|compare-value|check-for-non-existence">
+						<name filter-type="startswith|endswith|contains|equals|regex"
+						inverse="true|false" filter-value=""/>
+						<value filter-type="startswith|endswith|contains|equals|regex"
+						inverse="true|false" filter-value=""/>
+						</parameter> 
+						</parameters> -->
+					<!--<cookies>
+						<cookie match-type="check-for-existence|compare-value|check-for-non-existence">
+						<name filter-type="startswith|endswith|contains|equals|regex"
+						inverse="true|false" filter-value=""/>
+						<value filter-type="startswith|endswith|contains|equals|regex"
+						inverse="true|false" filter-value=""/>
+						<path filter-type="startswith|endswith|contains|equals|regex"
+						inverse="true|false" filter-value=""/>
+						</cookie>
+						</cookies> -->
+				</servlet-rule>
+			</transaction>
+		</custom>
+	</servlet-entry-points>
+
+	<struts-action-entry-points enabled="true">
+		<custom>
+			<transaction name="MyStrutsTransactions">
+				<struts-action-rule>
+					<action-class-name filter-type="contains"
+						filter-value="HelloWorld" />
+				</struts-action-rule>
+			</transaction>
+		</custom>
+	</struts-action-entry-points>
+	<pojo-entry-points enabled="true">
+		<excludes></excludes>
+		<custom></custom>
+	</pojo-entry-points>
+
+	<jms-entry-points enabled="true">
+		<excludes></excludes>
+		<custom>
+
+			<transaction name="MyCartJMSTransactions">
+
+
+				<incoming-message-rule>
+					<message-properties>
+						<property name="SEND_MAIL" type="String"
+							match-type="compare-value">
+							<value filter-type="equals"
+								filter-value="myorder" />
+						</property>
+					</message-properties>
+					<!-- <message-destination type="topic">
+						<destination-name filter-type="equals" filter-value="appdynamicspilot"/>
+						</message-destination>
+						<message-content message-type="text">
+						<text-message>
+						<text filter-type="equals" filter-value="sometext"/>
+						</text-message>
+						<map-message>
+						<property name="" type="String" match-type="compare-value">
+						<value filter-type="equals" filter-value=""/>
+						</property>
+						</map-message>
+						</message-content> -->
+				</incoming-message-rule>
+
+
+
+			</transaction>
+
+		</custom>
+	</jms-entry-points>
+
+	<spring-bean-entry-points enabled="true">
+		<excludes></excludes>
+		<custom>
+			<transaction name="MyCartSpringTransactions">
+				<spring-bean-rule>
+					<bean-id filter-type="equals"
+						filter-value="cartService" />
+				</spring-bean-rule>
+			</transaction>
+		</custom>
+	</spring-bean-entry-points>
+
+	<web-service-entry-points enabled="true">
+		<excludes></excludes>
+		<custom>
+			  <transaction name="OrderServiceTransaction">	
+				<web-service-rule>
+				<message-body>
+				<xpath-expression></xpath-expression>
+				</message-body>
+				<web-service-name filter-type="contains" filter-value="OrderService"/>
+				<web-service-port filter-type="equals" filter-value="OrderServiceSOAP11port_http"/>
+				<operation-name filter-type="equals" filter-value="createOrder"/>
+				<transport-url filter-type="contains" filter-value="OrderService"/>
+				<endpoint-interface filter-type="contains" filter-value="OrderService"/>
+				</web-service-rule>
+				</transaction>
+		</custom>
+	</web-service-entry-points>
+</business-transactions>
+
+

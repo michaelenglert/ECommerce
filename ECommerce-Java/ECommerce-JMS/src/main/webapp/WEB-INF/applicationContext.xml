@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+ 	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>/WEB-INF/database.properties</value>
+                <value>/WEB-INF/mail.properties</value>
+				<value>/WEB-INF/configuration.properties</value>
+             </list>
+        </property>
+    </bean>
+
+    <bean id="springContext" class="com.appdynamicspilot.util.SpringContext" />
+
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName">
+            <value>${hibernate.connection.driver_class}</value>
+        </property>
+        <property name="url">
+            <value>${hibernate.connection.url}</value>
+        </property>
+        <property name="username">
+            <value>${hibernate.connection.username}</value>
+        </property>
+        <property name="password">
+            <value>${hibernate.connection.password}</value>
+        </property>
+    </bean>
+	
+	 <bean id="mailerServiceTarget" class="com.appdynamicspilot.service.MailSender">
+		<property name="user" value="${mail.username}" />
+		<property name="password" value="${mail.password}" />
+		<property name="fromAddress" value="${mail.default.from}" />
+		<property name="host" value="${mail.host}" />
+		<property name="port" value="${mail.port}" />
+	</bean>
+	
+	<bean id="mailerService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+       <property name="transactionManager"><ref bean="transactionManager"/></property>
+       <property name="target"><ref local="mailerServiceTarget"/></property>
+       <property name="proxyTargetClass"><value>true</value></property>
+       <property name="transactionAttributes">
+            <props>
+               <prop key="get*">PROPAGATION_SUPPORTS</prop>
+               <prop key="save*">PROPAGATION_REQUIRED</prop>
+               <prop key="update*">PROPAGATION_REQUIRED</prop>
+               <prop key="delete*">PROPAGATION_REQUIRED</prop>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+            </props>
+       </property>
+    </bean>
+
+     <bean id="mailService" class="com.appdynamicspilot.service.MailService">
+     	<property name="mailerService" ref="mailerService"/>
+     </bean>
+
+    <bean id="defaultDestination" class="org.apache.activemq.command.ActiveMQQueue">
+        <constructor-arg value="OrderQueue" />
+    </bean>
+
+    <bean id="fulfillmentDestination" class="org.apache.activemq.command.ActiveMQQueue">
+        <constructor-arg value="fulfillmentQueue" />
+    </bean>
+
+    <!-- a pooling based JMS provider -->
+    <bean id="jmsFactory" class="org.apache.activemq.pool.PooledConnectionFactory" destroy-method="stop">
+        <property name="connectionFactory">
+            <bean class="org.apache.activemq.ActiveMQConnectionFactory">
+                <property name="brokerURL"><value>${jmsBrokerUrl}</value></property>
+            </bean>
+        </property>
+    </bean>
+
+    <!-- Spring JMS Template -->
+    <bean id="proucerJmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+        <property name="connectionFactory"><ref local="jmsFactory"/></property>
+        <property name="defaultDestination"><ref local="defaultDestination"/></property>
+    </bean>
+
+    <bean id="consumerJmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+        <property name="connectionFactory"><ref local="jmsFactory"/></property>
+        <property name="defaultDestination"><ref local="defaultDestination"/></property>
+    </bean>
+
+    <bean id="messageListener" class="com.appdynamicspilot.jms.MessageConsumer">
+        <property name="mailService"><ref bean="mailService"></ref></property>
+    </bean>
+
+    <bean id="fulfillmentListener" class="com.appdynamicspilot.jms.FulfillmentConsumer">
+        <property name="restUrl"><value>${restUrl}</value></property>
+    </bean>
+
+
+
+    <bean id="listenerContainer"
+          class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="jmsFactory" />
+        <property name="destination" ref="defaultDestination" />
+        <property name="messageListener" ref="messageListener" />
+    </bean>
+
+    <bean id="fulfillmentlistenerContainer"
+          class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="jmsFactory" />
+        <property name="destination" ref="fulfillmentDestination" />
+        <property name="messageListener" ref="fulfillmentListener" />
+    </bean>
+
+
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="persistenceUnitName" value="pu"/>
+        <property name="jpaVendorAdapter">
+            <bean  class="org.springframework.orm.jpa.vendor.EclipseLinkJpaVendorAdapter">
+                <property name="showSql" value="true"/>
+                <property name="generateDdl" value="false"/>
+                <property name="database" value="MYSQL"/>
+            </bean>
+        </property>
+    </bean>
+
+
+
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory"/>
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+	
+</beans>
+

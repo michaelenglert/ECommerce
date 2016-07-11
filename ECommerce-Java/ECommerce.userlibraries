@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="Gradle: jaxen:jaxen:1.1.1">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/jaxen/jaxen/1.1.1/9f5d3c5974dbe5cf69c2c2ec7d8a4eb6e0fce7f9/jaxen-1.1.1.jar" />
+  </library>
+  <library name="Gradle: javax.mail:mail:1.4">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/javax.mail/mail/1.4/1aa1579ae5ecd41920c4f355b0a9ef40b68315dd/mail-1.4.jar" />
+  </library>
+  <library name="Gradle: org.eclipse.jetty:jetty-server:9.1.1.v20140108">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-server/9.1.1.v20140108/59cbe94bceb7916119103b24d3576570f1413e0/jetty-server-9.1.1.v20140108.jar" />
+  </library>
+  <library name="Gradle: org.javassist:javassist:3.18.1-GA">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.javassist/javassist/3.18.1-GA/d9a09f7732226af26bf99f19e2cffe0ae219db5b/javassist-3.18.1-GA.jar" />
+  </library>
+  <library name="Gradle: javax.servlet:javax.servlet-api:3.1.0">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/javax.servlet/javax.servlet-api/3.1.0/3cd63d075497751784b2fa84be59432f4905bf7c/javax.servlet-api-3.1.0.jar" />
+  </library>
+  <library name="Gradle: javax.jms:jms-api:1.1-rev-1">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/javax.jms/jms-api/1.1-rev-1/af256c6e1b77f1599c33b61c730fb1ff591cbfb0/jms-api-1.1-rev-1.jar" />
+  </library>
+  <library name="Gradle: com.fasterxml.jackson.core:jackson-core:2.3.2">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.3.2/559b70ac8a0d5cad611da4223137a920147201ba/jackson-core-2.3.2.jar" />
+  </library>
+  <library name="Gradle: commons-discovery:commons-discovery:0.2">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/commons-discovery/commons-discovery/0.2/7773ac7a7248f08ed2b8d297c6e2ef28260640ea/commons-discovery-0.2.jar" />
+  </library>
+  <library name="Gradle: org.eclipse.jetty:jetty-http:9.1.1.v20140108">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-http/9.1.1.v20140108/8862a60317601b7a674b61666e18615c500b5c00/jetty-http-9.1.1.v20140108.jar" />
+  </library>
+  <library name="Gradle: javax.xml.stream:stax-api:1.0-2">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/javax.xml.stream/stax-api/1.0-2/d6337b0de8b25e53e81b922352fbea9f9f57ba0b/stax-api-1.0-2.jar" />
+  </library>
+  <library name="Gradle: org.apache.httpcomponents:httpcore:4.3.2">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.3.2/31fbbff1ddbf98f3aa7377c94d33b0447c646b6e/httpcore-4.3.2.jar" />
+  </library>
+  <library name="Gradle: org.apache.geronimo.specs:geronimo-jms_1.1_spec:1.1.1">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.apache.geronimo.specs/geronimo-jms_1.1_spec/1.1.1/c872b46c601d8dc03633288b81269f9e42762cea/geronimo-jms_1.1_spec-1.1.1.jar" />
+  </library>
+  <library name="Gradle: org.glassfish.jersey.containers:jersey-container-jetty-http:2.13">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.containers/jersey-container-jetty-http/2.13/62ed37377984db6eecbc7d6f165efc401ababe9/jersey-container-jetty-http-2.13.jar" />
+  </library>
+  <library name="Gradle: xml-apis:xml-apis:2.0.2">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/xml-apis/xml-apis/2.0.2/3136ca936f64c9d68529f048c2618bd356bf85c9/xml-apis-2.0.2.jar" />
+  </library>
+  <library name="Gradle: log4j:log4j:1.2.17">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/log4j/log4j/1.2.17/5af35056b4d257e4b64b9e8069c0746e8b08629f/log4j-1.2.17.jar" />
+  </library>
+  <library name="Gradle: commons-collections:commons-collections:3.2.1">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/commons-collections/commons-collections/3.2.1/761ea405b9b37ced573d2df0d1e3a4e0f9edc668/commons-collections-3.2.1.jar" />
+  </library>
+  <library name="Gradle: asm:asm-tree:3.3">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/asm/asm-tree/3.3/33c13070f194e1f0385877ec9306a24e983b00e3/asm-tree-3.3.jar" />
+  </library>
+  <library name="Gradle: commons-fileupload:commons-fileupload:1.3.1">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/commons-fileupload/commons-fileupload/1.3.1/c621b54583719ac0310404463d6d99db27e1052c/commons-fileupload-1.3.1.jar" />
+  </library>
+  <library name="Gradle: org.springframework:spring-aop:3.2.11.RELEASE">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/3.2.11.RELEASE/470020b04f4491b27e07d1ae2e83d707fabd72ca/spring-aop-3.2.11.RELEASE.jar" />
+  </library>
+  <library name="Gradle: org.eclipse.persistence:org.eclipse.persistence.jpa:2.5.2">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.eclipse.persistence/org.eclipse.persistence.jpa/2.5.2/2a54e88f70b488381f837d644a16a2219fb4fd64/org.eclipse.persistence.jpa-2.5.2.jar" />
+  </library>
+  <library name="Gradle: commons-pool:commons-pool:1.5.4">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/commons-pool/commons-pool/1.5.4/75b6e20c596ed2945a259cea26d7fadd298398e6/commons-pool-1.5.4.jar" />
+  </library>
+  <library name="Gradle: xerces:xmlParserAPIs:2.6.0">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/xerces/xmlParserAPIs/2.6.0/65acede1e5305bd2b92213d7b5761328c6f4fd9/xmlParserAPIs-2.6.0.jar" />
+  </library>
+  <library name="Gradle: org.apache.geronimo.specs:geronimo-activation_1.1_spec:1.0.1">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.apache.geronimo.specs/geronimo-activation_1.1_spec/1.0.1/79c75e201af44cf766e78a2515c3f88a19f69e1f/geronimo-activation_1.1_spec-1.0.1.jar" />
+  </library>
+  <library name="Gradle: org.apache.axis2:axis2-adb:1.4.1">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.apache.axis2/axis2-adb/1.4.1/800c809fde5746d679e4083d64b3c6f4cb95f74b/axis2-adb-1.4.1.jar" />
+  </library>
+  <library name="Gradle: org.apache.activemq:activemq-core:5.5.1">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.apache.activemq/activemq-core/5.5.1/aaf6b3e685097edacbe870df9216e13f706bb250/activemq-core-5.5.1.jar" />
+  </library>
+  <library name="Gradle: org.springframework:spring-jms:3.2.11.RELEASE">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jms/3.2.11.RELEASE/7ef36b67141950040229cce4cfddeea1ec6a2f12/spring-jms-3.2.11.RELEASE.jar" />
+  </library>
+  <library name="Gradle: axis:axis-saaj:1.4">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/axis/axis-saaj/1.4/581149d1f391258754354f2acf2b56665d53de2e/axis-saaj-1.4.jar" />
+  </library>
+  <library name="Gradle: org.apache.neethi:neethi:2.0.4">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.apache.neethi/neethi/2.0.4/c5bbf05c56ef0d68eec17a7eb1ed9241052fd763/neethi-2.0.4.jar" />
+  </library>
+  <library name="Gradle: org.eclipse.jetty:jetty-security:9.1.1.v20140108">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-security/9.1.1.v20140108/b4267aca501b19183a7ce8d2a112f11534a60ea0/jetty-security-9.1.1.v20140108.jar" />
+  </library>
+  <library name="Gradle: org.glassfish.jersey.core:jersey-common:2.13">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-common/2.13/2142596b05bbf3c171173843b132eeea0a0f08d5/jersey-common-2.13.jar" />
+  </library>
+  <library name="Gradle: org.eclipse.jetty:jetty-io:9.1.1.v20140108">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-io/9.1.1.v20140108/43dd657baca13bad8588ac8a1191983589e68699/jetty-io-9.1.1.v20140108.jar" />
+  </library>
+  <library name="Gradle: org.osgi:org.osgi.core:4.1.0">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.osgi/org.osgi.core/4.1.0/b88cd082b5b6774e9db939e28c0e3dc526c92d89/org.osgi.core-4.1.0.jar" />
+  </library>
+  <library name="Gradle: org.eclipse.jetty:jetty-servlet:9.1.1.v20140108">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-servlet/9.1.1.v20140108/1ccfa2c3caedf24147929c49d8d42f3ad8dce993/jetty-servlet-9.1.1.v20140108.jar" />
+  </library>
+  <library name="Gradle: org.springframework:spring-jdbc:3.2.11.RELEASE">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jdbc/3.2.11.RELEASE/ef77e3943d70ef69b2b214e798219dea4f823512/spring-jdbc-3.2.11.RELEASE.jar" />
+  </library>
+  <library name="Gradle: org.codehaus.jackson:jackson-mapper-asl:1.9.13">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.codehaus.jackson/jackson-mapper-asl/1.9.13/1ee2f2bed0e5dd29d1cb155a166e6f8d50bbddb7/jackson-mapper-asl-1.9.13.jar" />
+  </library>
+  <library name="Gradle: org.springframework:spring-context:3.2.11.RELEASE">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/3.2.11.RELEASE/d223389e994ed74d03c35db8e8554aa461410468/spring-context-3.2.11.RELEASE.jar" />
+  </library>
+  <library name="Gradle: org.eclipse.persistence:org.eclipse.persistence.jpa.jpql:2.5.2">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.eclipse.persistence/org.eclipse.persistence.jpa.jpql/2.5.2/29af1d338cbb76290d1a96f5a6610f1e8c319ae5/org.eclipse.persistence.jpa.jpql-2.5.2.jar" />
+  </library>
+  <library name="Gradle: commons-io:commons-io:2.2">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.2/83b5b8a7ba1c08f9e8c8ff2373724e33d3c1e22a/commons-io-2.2.jar" />
+  </library>
+  <library name="Gradle: org.eclipse.jetty:jetty-webapp:9.1.1.v20140108">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-webapp/9.1.1.v20140108/b096c61340cbe15f83aa854eb20043c2635cf54a/jetty-webapp-9.1.1.v20140108.jar" />
+  </library>
+  <library name="Gradle: org.apache.activemq:activeio-core:3.1.2">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.apache.activemq/activeio-core/3.1.2/91348a918fcea7d967ca3f1bb8ed19065bbf819d/activeio-core-3.1.2.jar" />
+  </library>
+  <library name="Gradle: ognl:ognl:3.0.6">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/ognl/ognl/3.0.6/a3665cf8e3426686ee751790f3d1e1ec5705e9dc/ognl-3.0.6.jar" />
+  </library>
+  <library name="Gradle: org.eclipse.persistence:org.eclipse.persistence.antlr:2.5.2">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.eclipse.persistence/org.eclipse.persistence.antlr/2.5.2/189db51e5a42710f16b5cf880aecc19b2820b0f9/org.eclipse.persistence.antlr-2.5.2.jar" />
+  </library>
+  <library name="Gradle: org.glassfish.hk2:hk2-locator:2.3.0-b10">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2-locator/2.3.0-b10/40977d562f667b553bed14cae64ad596ecf8d54a/hk2-locator-2.3.0-b10.jar" />
+  </library>
+  <library name="Gradle: org.glassfish.jersey.core:jersey-server:2.13">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-server/2.13/b33036bd63f6f972bc2eb1e14d44aa609b12df27/jersey-server-2.13.jar" />
+  </library>
+  <library name="Gradle: asm:asm-commons:3.3">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/asm/asm-commons/3.3/3630d2095238beee3f94670af3d9a9dc115ce887/asm-commons-3.3.jar" />
+  </library>
+  <library name="Gradle: org.eclipse.persistence:org.eclipse.persistence.asm:2.5.2">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.eclipse.persistence/org.eclipse.persistence.asm/2.5.2/83298d74d26bddd95c5025ab2a1e545bb5424739/org.eclipse.persistence.asm-2.5.2.jar" />
+  </library>
+  <library name="Gradle: wsdl4j:wsdl4j:1.6.3">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/wsdl4j/wsdl4j/1.6.3/6d106a6845a3d3477a1560008479312888e94f2f/wsdl4j-1.6.3.jar" />
+  </library>
+  <library name="Gradle: org.springframework:spring-tx:3.2.11.RELEASE">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.springframework/spring-tx/3.2.11.RELEASE/94ff192204af52604cc636dbb1d8c4929b93048b/spring-tx-3.2.11.RELEASE.jar" />
+  </library>
+  <library name="Gradle: com.amazonaws:aws-java-sdk-sqs:1.9.30">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-java-sdk-sqs/1.9.30/f99ef04bb24b646e835d72b6fe85453b36a28f4c/aws-java-sdk-sqs-1.9.30.jar" />
+  </library>
+  <library name="Gradle: com.amazonaws:aws-java-sdk-core:1.9.30">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-java-sdk-core/1.9.30/b06337f947cd134ef038f41b5908add35c4593f9/aws-java-sdk-core-1.9.30.jar" />
+  </library>
+  <library name="Gradle: commons-lang:commons-lang:2.6">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/commons-lang/commons-lang/2.6/ce1edb914c94ebc388f086c6827e8bdeec71ac2/commons-lang-2.6.jar" />
+  </library>
+  <library name="Gradle: org.apache.activemq.protobuf:activemq-protobuf:1.1">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.apache.activemq.protobuf/activemq-protobuf/1.1/26682eb801f70563511f7c424dc10e8b3e66340e/activemq-protobuf-1.1.jar" />
+  </library>
+  <library name="Gradle: org.apache.ant:ant:1.7.0">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.apache.ant/ant/1.7.0/9746af1a485e50cf18dcb232489032a847067066/ant-1.7.0.jar" />
+  </library>
+  <library name="Gradle: org.apache.geronimo.specs:geronimo-jta_1.0.1B_spec:1.0.1">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.apache.geronimo.specs/geronimo-jta_1.0.1B_spec/1.0.1/c9e67d21082a497f20e4ce87be1379faceb9c087/geronimo-jta_1.0.1B_spec-1.0.1.jar" />
+  </library>
+  <library name="Gradle: org.glassfish.hk2:osgi-resource-locator:1.0.1">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/osgi-resource-locator/1.0.1/4ed2b2d4738aed5786cfa64cba5a332779c4c708/osgi-resource-locator-1.0.1.jar" />
+  </library>
+  <library name="Gradle: org.apache.woden:woden-impl-dom:1.0M8">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.apache.woden/woden-impl-dom/1.0M8/a8f543456fc71426e62d003dadf3004b198aceaf/woden-impl-dom-1.0M8.jar" />
+  </library>
+  <library name="Gradle: xalan:xalan:2.7.0">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/xalan/xalan/2.7.0/a33c0097f1c70b20fa7ded220ea317eb3500515e/xalan-2.7.0.jar" />
+  </library>
+  <library name="Gradle: org.glassfish.jersey.containers:jersey-container-servlet:2.13">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.containers/jersey-container-servlet/2.13/3f292f3209db49df3d719324aa426032328901cd/jersey-container-servlet-2.13.jar" />
+  </library>
+  <library name="Gradle: asm:asm:3.3">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/asm/asm/3.3/fb0f302a91a376fd5cfe23167c419375e8fc9b8f/asm-3.3.jar" />
+  </library>
+  <library name="Gradle: org.apache.axis:axis:1.4">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.apache.axis/axis/1.4/94a9ce681a42d0352b3ad22659f67835e560d107/axis-1.4.jar" />
+  </library>
+  <library name="Gradle: org.glassfish.hk2.external:aopalliance-repackaged:2.3.0-b10">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2.external/aopalliance-repackaged/2.3.0-b10/8970184d22d7ec9f9bd2fbddf861e342f8019a84/aopalliance-repackaged-2.3.0-b10.jar" />
+  </library>
+  <library name="Gradle: wsdl4j:wsdl4j:1.6.2">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/wsdl4j/wsdl4j/1.6.2/dec1669fb6801b7328e01ad72fc9e10b69ea06c1/wsdl4j-1.6.2.jar" />
+  </library>
+  <library name="Gradle: org.freemarker:freemarker:2.3.19">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.freemarker/freemarker/2.3.19/a251045e5fadd02824d17f1aa8c412accf1aa1c9/freemarker-2.3.19.jar" />
+  </library>
+  <library name="Gradle: org.eclipse.jetty:jetty-xml:9.1.1.v20140108">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-xml/9.1.1.v20140108/e61cf17436997b14a6c53bce12d1f178ac9a152d/jetty-xml-9.1.1.v20140108.jar" />
+  </library>
+  <library name="Gradle: org.apache.activemq:activemq-pool:5.5.1">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.apache.activemq/activemq-pool/5.5.1/5f8e265f716425fb806ab773bafab494fb60f7f7/activemq-pool-5.5.1.jar" />
+  </library>
+  <library name="Gradle: javax.ws.rs:javax.ws.rs-api:2.0.1">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/javax.ws.rs/javax.ws.rs-api/2.0.1/104e9c2b5583cfcfeac0402316221648d6d8ea6b/javax.ws.rs-api-2.0.1.jar" />
+  </library>
+  <library name="Gradle: aopalliance:aopalliance:1.0">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/aopalliance/aopalliance/1.0/235ba8b489512805ac13a8f9ea77a1ca5ebe3e8/aopalliance-1.0.jar" />
+  </library>
+  <library name="Gradle: org.glassfish.hk2:hk2-api:2.3.0-b10">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2-api/2.3.0-b10/4971a6e2e87c4bee3c842d099977969a42a0ad64/hk2-api-2.3.0-b10.jar" />
+  </library>
+  <library name="Gradle: axis:axis-jaxrpc:1.4">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/axis/axis-jaxrpc/1.4/b393f1f0c0d95b68c86d0b1ab2e687bb71f3c075/axis-jaxrpc-1.4.jar" />
+  </library>
+  <library name="Gradle: com.sun.mail:javax.mail:1.5.2">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/com.sun.mail/javax.mail/1.5.2/ad1027a3d832bb7f34b4b9afeed760ca8eaa12f/javax.mail-1.5.2.jar" />
+  </library>
+  <library name="Gradle: org.springframework:spring-expression:3.2.11.RELEASE">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.springframework/spring-expression/3.2.11.RELEASE/2902e7f1b3d669e134f83d85d964c0e5bf5d7c7b/spring-expression-3.2.11.RELEASE.jar" />
+  </library>
+  <library name="Gradle: org.codehaus.woodstox:wstx-asl:3.2.4">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.codehaus.woodstox/wstx-asl/3.2.4/aada03a08ae547bee92caf3b1e0cd756134e9226/wstx-asl-3.2.4.jar" />
+  </library>
+  <library name="Gradle: org.eclipse.jetty:jetty-continuation:9.1.1.v20140108">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-continuation/9.1.1.v20140108/5c93a8bdad9e33eacd07060dc725044daf28a2a2/jetty-continuation-9.1.1.v20140108.jar" />
+  </library>
+  <library name="Gradle: javax.xml.soap:javax.xml.soap-api:1.3.5">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/javax.xml.soap/javax.xml.soap-api/1.3.5/e11c0f07a92f6d02a347dd9c55ee56692a6d9f7e/javax.xml.soap-api-1.3.5.jar" />
+  </library>
+  <library name="Gradle: org.glassfish.jersey.core:jersey-client:2.13">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-client/2.13/c3aa96e822e440176540c9fc78961095082a8f4d/jersey-client-2.13.jar" />
+  </library>
+  <library name="Gradle: commons-net:commons-net:2.0">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/commons-net/commons-net/2.0/1f75887afe587df7c2435f2f6d3199f05a324c8d/commons-net-2.0.jar" />
+  </library>
+  <library name="Gradle: org.apache.woden:woden-api:1.0M8">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.apache.woden/woden-api/1.0M8/e15d817dc457976e9ab5ed5b92e14c6f0ff4bcc9/woden-api-1.0M8.jar" />
+  </library>
+  <library name="Gradle: org.glassfish.jersey.containers:jersey-container-jetty-servlet:2.13">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.containers/jersey-container-jetty-servlet/2.13/81e90e85ff25d5fd0ed64371e479b7601383d7e/jersey-container-jetty-servlet-2.13.jar" />
+  </library>
+  <library name="Gradle: javax.xml.bind:jaxb-api:2.2.9">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/javax.xml.bind/jaxb-api/2.2.9/709ee2c5816cdf54a222c18c475b8ba39140cd31/jaxb-api-2.2.9.jar" />
+  </library>
+  <library name="Gradle: commons-logging:commons-logging:1.1.3">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.1.3/f6f66e966c70a83ffbdb6f17a0919eaf7c8aca7f/commons-logging-1.1.3.jar" />
+  </library>
+  <library name="Gradle: org.apache.axis2:axis2-kernel:1.4.1">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.apache.axis2/axis2-kernel/1.4.1/fd59331a4bbc734c290744316e627ea343329f49/axis2-kernel-1.4.1.jar" />
+  </library>
+  <library name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.3.0">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.3.0/f5e853a20b60758922453d56f9ae1e64af5cb3da/jackson-annotations-2.3.0.jar" />
+  </library>
+  <library name="Gradle: org.apache.activemq:activemq-all:5.5.1">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.apache.activemq/activemq-all/5.5.1/bfe0dce011340793357a52c310e9276e59fa6cb1/activemq-all-5.5.1.jar" />
+  </library>
+  <library name="Gradle: org.springframework:spring-web:3.2.11.RELEASE">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/3.2.11.RELEASE/77ada14cc181dacb62de4fdf5adabc9f1892c4d2/spring-web-3.2.11.RELEASE.jar" />
+  </library>
+  <library name="Gradle: org.codehaus.jackson:jackson-core-asl:1.9.13">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.codehaus.jackson/jackson-core-asl/1.9.13/3c304d70f42f832e0a86d45bd437f692129299a4/jackson-core-asl-1.9.13.jar" />
+  </library>
+  <library name="Gradle: org.eclipse.jetty:jetty-util:9.1.1.v20140108">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-util/9.1.1.v20140108/7618e783e17c6227d4d76192d1c05e04398bd60c/jetty-util-9.1.1.v20140108.jar" />
+  </library>
+  <library name="Gradle: org.codehaus.castor:castor-core:1.3.3">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.codehaus.castor/castor-core/1.3.3/2fbb4a27b840e116526a1189dbe53307551ecfb4/castor-core-1.3.3.jar" />
+  </library>
+  <library name="Gradle: axis:axis:1.4">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/axis/axis/1.4/94a9ce681a42d0352b3ad22659f67835e560d107/axis-1.4.jar" />
+  </library>
+  <library name="Gradle: org.apache.axis2:axis2-codegen:1.4.1">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.apache.axis2/axis2-codegen/1.4.1/c86b848eeac8ed897dc37372652cbc10a5950c1b/axis2-codegen-1.4.1.jar" />
+  </library>
+  <library name="Gradle: annogen:annogen:0.1.0">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/annogen/annogen/0.1.0/a8de34ea7aa93765d24dc16ec9c61af5160bb899/annogen-0.1.0.jar" />
+  </library>
+  <library name="Gradle: javassist:javassist:3.11.0.GA">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/javassist/javassist/3.11.0.GA/2c00105734a57e9ee4f27e4b17cd43200e5f0ff8/javassist-3.11.0.GA.jar" />
+  </library>
+  <library name="Gradle: org.apache.ws.commons.schema:XmlSchema:1.4.2">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.apache.ws.commons.schema/XmlSchema/1.4.2/7cf868b0d6a5b68be0dea014126b986b3387755a/XmlSchema-1.4.2.jar" />
+  </library>
+  <library name="Gradle: org.apache.httpcomponents:httpclient:4.3.4">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.3.4/a9a1fef2faefed639ee0d0fba5b3b8e4eb2ff2d8/httpclient-4.3.4.jar" />
+  </library>
+  <library name="Gradle: org.glassfish.hk2.external:javax.inject:2.3.0-b10">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2.external/javax.inject/2.3.0-b10/48656679e624eb41140abcd7b52b34808cf1852d/javax.inject-2.3.0-b10.jar" />
+  </library>
+  <library name="Gradle: org.apache.commons:commons-lang3:3.1">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.1/905075e6c80f206bbe6cf1e809d2caa69f420c76/commons-lang3-3.1.jar" />
+  </library>
+  <library name="Gradle: org.glassfish.hk2:hk2-utils:2.3.0-b10">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2-utils/2.3.0-b10/66f81d01d2f732a8c3204d8120488507a2834bca/hk2-utils-2.3.0-b10.jar" />
+  </library>
+  <library name="Gradle: commons-codec:commons-codec:1.6">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.6/b7f0fc8f61ecadeb3695f0b9464755eee44374d4/commons-codec-1.6.jar" />
+  </library>
+  <library name="Gradle: org.jasypt:jasypt:1.7">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.jasypt/jasypt/1.7/5edddc5dfaad7bea399c680b7514c69cfc8ed818/jasypt-1.7.jar" />
+  </library>
+  <library name="Gradle: org.codehaus.castor:castor-xml:1.3.3">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.codehaus.castor/castor-xml/1.3.3/1072663e1b7463f6452eba51749bec5526f4883d/castor-xml-1.3.3.jar" />
+  </library>
+  <library name="Gradle: org.apache.httpcomponents:httpcore-nio:4.0-beta1">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore-nio/4.0-beta1/a0d825beaa0bc0b03fcf11315abc4b7fd60fe2e8/httpcore-nio-4.0-beta1.jar" />
+  </library>
+  <library name="Gradle: axis:axis-wsdl4j:1.5.1">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/axis/axis-wsdl4j/1.5.1/bd804633b9c2cf06258641febc31a8ff3b0906bc/axis-wsdl4j-1.5.1.jar" />
+  </library>
+  <library name="Gradle: org.apache.geronimo.specs:geronimo-stax-api_1.0_spec:1.0.1">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.apache.geronimo.specs/geronimo-stax-api_1.0_spec/1.0.1/1c171093a8b43aa550c6050ac441abe713ebb4f2/geronimo-stax-api_1.0_spec-1.0.1.jar" />
+  </library>
+  <library name="Gradle: javax.servlet:servlet-api:2.5">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/javax.servlet/servlet-api/2.5/5959582d97d8b61f4d154ca9e495aafd16726e34/servlet-api-2.5.jar" />
+  </library>
+  <library name="Gradle: org.apache.ws.commons.axiom:axiom-api:1.2.7">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.apache.ws.commons.axiom/axiom-api/1.2.7/aa260a5f3fcaee3b95b551a9bbcbe63f56e5a2ad/axiom-api-1.2.7.jar" />
+  </library>
+  <library name="Gradle: org.eclipse.persistence:org.eclipse.persistence.core:2.5.2">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.eclipse.persistence/org.eclipse.persistence.core/2.5.2/4c4e53577658440409783942aee0d37da0a67f9/org.eclipse.persistence.core-2.5.2.jar" />
+  </library>
+  <library name="Gradle: javax.annotation:javax.annotation-api:1.2-b03">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/javax.annotation/javax.annotation-api/1.2-b03/8f01d6cd613406930bc35f6aad10f53fb0200788/javax.annotation-api-1.2-b03.jar" />
+  </library>
+  <library name="Gradle: commons-httpclient:commons-httpclient:3.1">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/commons-httpclient/commons-httpclient/3.1/964cd74171f427720480efdec40a7c7f6e58426a/commons-httpclient-3.1.jar" />
+  </library>
+  <library name="Gradle: org.glassfish.jersey.containers:jersey-container-servlet-core:2.13">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.containers/jersey-container-servlet-core/2.13/9db905465992471255c9428ac8bc165652611365/jersey-container-servlet-core-2.13.jar" />
+  </library>
+  <library name="Gradle: org.apache.geronimo.specs:geronimo-j2ee-management_1.1_spec:1.0.1">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.apache.geronimo.specs/geronimo-j2ee-management_1.1_spec/1.0.1/5372615b0c04c1913c95c34a0414cef720ca2855/geronimo-j2ee-management_1.1_spec-1.0.1.jar" />
+  </library>
+  <library name="Gradle: org.apache.struts:struts2-core:2.3.16.3">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.apache.struts/struts2-core/2.3.16.3/3cf0054960a5959e569695bf70c41eab89aeda75/struts2-core-2.3.16.3.jar" />
+  </library>
+  <library name="Gradle: org.apache.struts:struts2-spring-plugin:2.3.16.3">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.apache.struts/struts2-spring-plugin/2.3.16.3/82c49cf0ea846f1b6916aeebf3969291cd73020f/struts2-spring-plugin-2.3.16.3.jar" />
+  </library>
+  <library name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.3.2">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.3.2/c75edc740a6d8cb1cef6fa82fa594e0bce561916/jackson-databind-2.3.2.jar" />
+  </library>
+  <library name="Gradle: org.springframework:spring-webmvc:3.2.11.RELEASE">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/3.2.11.RELEASE/2f462ade996c2d7fa37271feb1b9b5efffa59792/spring-webmvc-3.2.11.RELEASE.jar" />
+  </library>
+  <library name="Gradle: backport-util-concurrent:backport-util-concurrent:3.1">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/backport-util-concurrent/backport-util-concurrent/3.1/682f7ac17fed79e92f8e87d8455192b63376347b/backport-util-concurrent-3.1.jar" />
+  </library>
+  <library name="Gradle: stax:stax:1.2.0">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/stax/stax/1.2.0/c434800de5e4bbe1822805be5fb1c32d6834f830/stax-1.2.0.jar" />
+  </library>
+  <library name="Gradle: org.apache.struts.xwork:xwork-core:2.3.16.3">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.apache.struts.xwork/xwork-core/2.3.16.3/bacbc7e69e258d6f9b7fc34c2ec57c9c0fb2641c/xwork-core-2.3.16.3.jar" />
+  </library>
+  <library name="Gradle: org.glassfish.jersey.bundles.repackaged:jersey-guava:2.13">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.bundles.repackaged/jersey-guava/2.13/e4b560eba2e072038de80ea2868e891acddf753c/jersey-guava-2.13.jar" />
+  </library>
+  <library name="Gradle: javax.xml.ws:jaxws-api:2.2.11">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/javax.xml.ws/jaxws-api/2.2.11/c2281ca3a7f5ec3324cbc8c6cf2671c00db7cba3/jaxws-api-2.2.11.jar" />
+  </library>
+  <library name="Gradle: javax.activation:activation:1.1">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/javax.activation/activation/1.1/e6cb541461c2834bdea3eb920f1884d1eb508b50/activation-1.1.jar" />
+  </library>
+  <library name="Gradle: javax.validation:validation-api:1.1.0.Final">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/javax.validation/validation-api/1.1.0.Final/8613ae82954779d518631e05daa73a6a954817d5/validation-api-1.1.0.Final.jar" />
+  </library>
+  <library name="Gradle: javax.servlet:jstl:1.2">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/javax.servlet/jstl/1.2/74aca283cd4f4b4f3e425f5820cda58f44409547/jstl-1.2.jar" />
+  </library>
+  <library name="Gradle: org.apache.ws.commons.axiom:axiom-dom:1.2.7">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.apache.ws.commons.axiom/axiom-dom/1.2.7/34f6d22244963bc617f3971a826104162eef1da4/axiom-dom-1.2.7.jar" />
+  </library>
+  <library name="Gradle: org.apache.ant:ant-launcher:1.7.0">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.apache.ant/ant-launcher/1.7.0/e7e30789211e074aa70ef3eaea59bd5b22a7fa7a/ant-launcher-1.7.0.jar" />
+  </library>
+  <library name="Gradle: commons-dbcp:commons-dbcp:1.4">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/commons-dbcp/commons-dbcp/1.4/30be73c965cc990b153a100aaaaafcf239f82d39/commons-dbcp-1.4.jar" />
+  </library>
+  <library name="Gradle: javax.annotation:javax.annotation-api:1.2">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/javax.annotation/javax.annotation-api/1.2/479c1e06db31c432330183f5cae684163f186146/javax.annotation-api-1.2.jar" />
+  </library>
+  <library name="Gradle: org.apache.axis:axis-saaj:1.4">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.apache.axis/axis-saaj/1.4/581149d1f391258754354f2acf2b56665d53de2e/axis-saaj-1.4.jar" />
+  </library>
+  <library name="Gradle: org.eclipse.persistence:javax.persistence:2.1.0">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.eclipse.persistence/javax.persistence/2.1.0/5bab675816dbe0f64bb86004b108bf2a00292358/javax.persistence-2.1.0.jar" />
+  </library>
+  <library name="Gradle: org.apache.ws.commons.axiom:axiom-impl:1.2.7">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.apache.ws.commons.axiom/axiom-impl/1.2.7/378b814d1a6129a3e8175d95cf60d48c60ae9d51/axiom-impl-1.2.7.jar" />
+  </library>
+  <library name="Gradle: org.springframework:spring-beans:3.2.11.RELEASE">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/3.2.11.RELEASE/f760312c99e7c172fd6611aeb7c2d18e586d4568/spring-beans-3.2.11.RELEASE.jar" />
+  </library>
+  <library name="Gradle: org.springframework:spring-core:3.2.11.RELEASE">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/3.2.11.RELEASE/5f2645e4801907ce1ffea54eaebf79cdb58a1fa2/spring-core-3.2.11.RELEASE.jar" />
+  </library>
+  <library name="Gradle: stax:stax-api:1.0.1">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/stax/stax-api/1.0.1/49c100caf72d658aca8e58bd74a4ba90fa2b0d70/stax-api-1.0.1.jar" />
+  </library>
+  <library name="Gradle: org.slf4j:slf4j-api:1.7.7">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.7/2b8019b6249bb05d81d3a3094e468753e2b21311/slf4j-api-1.7.7.jar" />
+  </library>
+  <library name="Gradle: org.apache.axis:axis-jaxrpc:1.4">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.apache.axis/axis-jaxrpc/1.4/b393f1f0c0d95b68c86d0b1ab2e687bb71f3c075/axis-jaxrpc-1.4.jar" />
+  </library>
+  <library name="Gradle: org.slf4j:slf4j-log4j12:1.7.7">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-log4j12/1.7.7/58f588119ffd1702c77ccab6acb54bfb41bed8bd/slf4j-log4j12-1.7.7.jar" />
+  </library>
+  <library name="Gradle: org.apache.activemq:kahadb:5.5.1">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.apache.activemq/kahadb/5.5.1/aaba9d7dd31453812b50d1e79012322f828ec8c2/kahadb-5.5.1.jar" />
+  </library>
+  <library name="Gradle: org.springframework:spring-orm:3.2.11.RELEASE">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.springframework/spring-orm/3.2.11.RELEASE/c2bc96f6b379e0e663cf52459f3e583905e02720/spring-orm-3.2.11.RELEASE.jar" />
+  </library>
+  <library name="Gradle: javax.inject:javax.inject:1">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar" />
+  </library>
+  <library name="Gradle: org.apache.geronimo.specs:geronimo-javamail_1.4_spec:1.2">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/org.apache.geronimo.specs/geronimo-javamail_1.4_spec/1.2/f6b07582a3d6ba452b10527fb508809aff8b353/geronimo-javamail_1.4_spec-1.2.jar" />
+  </library>
+  <library name="Gradle: xerces:xercesImpl:2.8.1">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/xerces/xercesImpl/2.8.1/25101e37ec0c907db6f0612cbf106ee519c1aef1/xercesImpl-2.8.1.jar" />
+  </library>
+  <library name="Gradle: mysql:mysql-connector-java:5.1.33">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/mysql/mysql-connector-java/5.1.33/8af455a9a3267e6664cafc87ace71a4e4ef02837/mysql-connector-java-5.1.33.jar" />
+  </library>
+  <library name="Gradle: javax.jws:jsr181-api:1.0-MR1">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/javax.jws/jsr181-api/1.0-MR1/401cc1d0e5f0d8f4d0532a54928ceaa27ec21258/jsr181-api-1.0-MR1.jar" />
+  </library>
+  <library name="Gradle: joda-time:joda-time:2.8">
+    <archive path="/Users/swetha.ravichandran/.gradle/caches/modules-2/files-2.1/joda-time/joda-time/2.8/9f2785d7184b97d005a44241ccaf980f43b9ccdb/joda-time-2.8.jar" />
+  </library>
+</eclipse-userlibraries>
+

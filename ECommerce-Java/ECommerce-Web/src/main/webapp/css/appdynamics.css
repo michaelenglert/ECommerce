@@ -1,0 +1,587 @@
+body {
+    margin: 0px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #333333;
+    font-weight: normal;
+    background-color: #000;
+    background-repeat: repeat-x;
+    width: 100%;
+}
+
+.mainContainer {
+    width: 100%;
+    text-align: left;
+    float: left;
+}
+
+.innerContainer {
+    width: 969px;
+    margin: 0 auto;
+    background-color: transparent;
+}
+
+.logo {
+    width: 311px;
+    height: 46px;
+    margin-top: 26px;
+    margin-bottom: 16px;
+    float: left;
+}
+
+.header {
+    width: 100%;
+    margin-left: 0px;
+}
+
+.topLogin1 {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #cccccc;
+    margin-top: 44px;
+}
+
+.topLogin {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #4dc6ff;
+    float: right;
+    margin-top: 44px;
+    margin-right: 3px;
+}
+
+.topLogin a {
+    color: #4dc6ff;
+    text-decoration: none;
+}
+
+.topLogin a:hover {
+    color: #4dc6ff;
+    text-decoration: underline;
+}
+
+.menucontainer {
+    width: 969px;
+    float: left;
+}
+
+.menuleftbg {
+    background-image: url(../images/menuleftbg.jpg);
+    background-repeat: no-repeat;
+    width: 6px;
+    height: 28px;
+    float: left;
+}
+
+.menurightbg {
+    background-image: url(../images/menurightbg.jpg);
+    background-repeat: no-repeat;
+    width: 6px;
+    height: 28px;
+    float: right;
+}
+
+.menubg {
+    background-image: url(../images/menubg.jpg);
+    background-repeat: repeat-x;
+    height: 28px;
+    width: 957px;
+}
+
+.menudiv ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.menudiv li {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #FFFFFF;
+    font-weight: normal;
+    display: inline;
+    background: url(../images/menudiv.jpg) right top no-repeat;
+    float: left;
+    list-style: none;
+    margin-top: 2px;
+}
+
+.menudiv li a {
+    color: #FFFFFF;
+    float: left;
+    padding: 5px;
+    text-decoration: none;
+    text-align: center;
+    padding: 5px 15px 0px 15px;
+    list-style: none;
+}
+
+.menudiv li a:hover {
+    float: left;
+    padding: 5px 15px 0px 15px;
+    text-decoration: none;
+    color: #4dc6ff;
+}
+
+/**********mid container**************/
+.midContainer {
+    width: 969px;
+    margin-top: 10px;
+    margin-bottom: auto;
+}
+
+.midTopbg {
+    background-repeat: no-repeat;
+    width: 969px;
+    height: 10px;
+    background-position: top;
+}
+
+.midbg {
+    background-color: #686868;
+    width: 969px;
+    float: left;
+}
+
+.midCLeft {
+    float: left;
+    width: 201px;
+    margin-left: 3px;
+}
+
+.midCright {
+    float: right;
+    width: 752px;
+    padding-left: 2px;
+    margin-right: 3px;
+}
+
+.leftBGnav {
+    background-repeat: no-repeat;
+    width: 201px;
+    height: 31px;
+    float: left;
+}
+
+.leftBg {
+    background-color: #4d4d4d;
+    float: left;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 191px;
+}
+
+.leftBg1 {
+    background-color: #4d4d4d;
+    float: left;
+}
+
+.leftBottom {
+    background-repeat: no-repeat;
+    width: 201px;
+    height: 17px;
+}
+
+.leftAdd {
+    height: 244px;
+    background-repeat: no-repeat;
+    float: left;
+    padding: 5px;
+}
+
+.banner {
+    width: 752px;
+    margin-bottom: 5px;
+}
+
+.LContainer {
+    width: 752px;
+}
+
+.lcontainerTop {
+    width: 752px;
+    height: 4px;
+}
+
+.lcontainerCon {
+    background-color: #efefef;
+    width: 752px;
+    float: left;
+}
+
+.lcontainerBot {
+    width: 752px;
+    height: 9px;
+    background-repeat: no-repeat;
+    margin-bottom: 10px;
+    float: left;
+}
+
+.loginBoxTop {
+    background-repeat: no-repeat;
+    width: 470px;
+    height: 31px;
+}
+
+.loginBoxBg {
+    background-repeat: repeat-y;
+    width: 470px;
+}
+
+.loginBoxBot {
+    background-repeat: no-repeat;
+    height: 9px;
+    width: 470px;
+}
+
+.logBoxContainer {
+    width: 470px;
+    margin-bottom: 58px;
+    margin-top: 58px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logintext {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #333333;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.loginTextc {
+    padding: 10px;
+}
+
+.Password {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #333333;
+    font-size: 11px;
+    font-weight: normal;
+    margin-top: 5px;
+    padding-right: 10px;
+}
+
+.PasswordBut {
+    margin-top: 20px;
+}
+
+.Password a {
+    text-decoration: none;
+    color: #333333;
+}
+
+.Password a:hover {
+    text-decoration: underline;
+    color: #333333;
+}
+
+.Button {
+    background-image: url(../images/Button.gif);
+    background-repeat: no-repeat;
+    width: 78px;
+    height: 27px;
+    font-weight: bold;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #fff;
+    font-size: 13px;
+    border: none;
+}
+
+.footer {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #000;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: center;
+    background-color: #686868;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.price {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #ad0202;
+    font-weight: bold;
+    font-size: 12px;
+    padding-left: 5px;
+    text-align: left;
+}
+
+.price1 {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #ad0202;
+    font-weight: bold;
+    font-size: 12px;
+    padding-right: 5px;
+    text-align: right;
+}
+
+.price1 a {
+    text-decoration: none;
+    color: #ad0202;
+}
+
+.price1 a:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+/***************View Page*****************************************************/
+.selectcategory {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    color: #FFFFFF;
+    font-weight: bold;
+    margin-left: 15px;
+    margin-top: 7px;
+}
+
+.leftnav ul {
+    margin: 0px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.leftnav li {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 12px;
+    color: #FFFFFF;
+    width: 167px;
+    background: url(images/leftnavhorline.gif) right bottom no-repeat;
+    list-style: none;
+    padding-bottom: 5px;
+    margin-bottom: 2px;
+    margin-left: 10px;
+}
+
+.leftnav li a {
+    color: #FFFFFF;
+    margin-bottom: 2px;
+    padding-bottom: 1px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.leftnav li a:hover {
+    text-decoration: none;
+    color: #4dc6ff;
+}
+
+/***************Books*****************************************************/
+.Items {
+    margin-left: 5px;
+    margin-top: 15px;
+    float: left;
+}
+
+.NewItems {
+    width: 180px;
+    margin-left: 3px;
+    margin-top: 15px;
+    float: right;
+    background-color: #cccccc;
+    margin-right: 11px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.Latest {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #660000;
+    font-weight: bold;
+    margin-left: 13px;
+    margin-top: 15px;
+    float: left;
+    width: 533px;
+}
+
+.Featured {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #419dfb;
+    font-weight: bold;
+    margin-top: 15px;
+    float: right;
+    text-align: left;
+    width: 192px;
+}
+
+.itemBox ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.itemBox li {
+    width: 170px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #333;
+    height: 219px;
+    border: 1px solid #333333;
+    display: inline;
+    margin-right: 5px;
+    list-style: none;
+}
+
+.itemBoxes {
+    width: 170px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    color: #333;
+    height: 219px;
+    border: 1px solid #333333;
+    margin-left: 5px;
+    text-align: center;
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
+
+.itemDes {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    text-align: center;
+    color: #333333;
+    padding-top: 10px;
+    font-weight: normal;
+}
+
+.itmprice {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #ad0202;
+    font-weight: bold;
+    font-size: 12px;
+    padding-left: 3px;
+    text-align: left;
+    margin-top: 30px;
+    float: left;
+}
+
+.Cart {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #ad0202;
+    font-weight: normal;
+    font-size: 12px;
+    padding-right: 5px;
+    text-align: right;
+    margin-top: 26px;
+    padding-top: 0px;
+    float: right;
+    background-image: url(../images/ca1.gif);
+    background-repeat: no-repeat;
+    background-position: left;
+    padding-left: 23px;
+    height: 19px;
+}
+
+.checkbox {
+    background-image: url(../images/checkbox.gif);
+    background-repeat: no-repeat;
+    width: 12px;
+    height: 12px;
+    border: none;
+    margin-left: 5px;
+    float: right;
+}
+
+.latestbooks ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.latestbooks li {
+    width: 156px;
+    margin: 0 auto;
+    background: url(../images/linebooks.gif) right bottom no-repeat;
+    list-style: none;
+    margin-bottom: 2px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    text-align: center;
+}
+
+.userAccount {
+    margin-top: 0px;
+    float: right;
+    width: 300px;
+}
+
+.WelcomeUser {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #fff;
+    width: 300px;
+    float: right;
+    text-align: right;
+    margin-top: 20px;
+    margin-right: 3px;
+}
+
+.Cartdetails {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    width: 165px;
+    color: #fff;
+    float: right;
+    text-align: right;
+    margin-top: 30px;
+    margin-right: 3px;
+    background-image: url(images/cart2.gif);
+    background-repeat: no-repeat;
+    height: 20px;
+}
+
+/**********************Selected books***********************/
+.selcetedItemcontainer {
+    width: 683px;
+    margin-bottom: 18px;
+    margin-top: 18px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.selcetedItemTop {
+    background-image: url(../images/selecteboxtop.jpg);
+    background-repeat: no-repeat;
+    width: 683px;
+    height: 34px;
+}
+
+.selcetedItemBg {
+    background-color: #CCCCCC;
+    width: 683px;
+}
+
+.selcetedItemBot {
+    background-image: url(../images/selectedboxbot.jpg);
+    background-repeat: no-repeat;
+    height: 34px;
+    width: 683px;
+}
+
+.Selecttext {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 15px;
+    padding-top: 4px;
+}
+
+.SelectDetails {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #333;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    padding: 10px 0px 5px 15px;
+}
+
+.Selectc {
+    padding: 7px;
+}

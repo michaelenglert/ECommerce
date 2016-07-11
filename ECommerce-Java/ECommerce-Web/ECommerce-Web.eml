@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component inheritJdk="true">
+	<output-test url="file://$MODULE_DIR$/build/classes/test"/>
+	<exclude-output/>
+	<contentEntry url="file://$MODULE_DIR$">
+		<testFolder url="file://$MODULE_DIR$/src/test/groovy"/>
+		<testFolder url="file://$MODULE_DIR$/src/test/java"/>
+		<testFolder url="file://$MODULE_DIR$/src/test/resources"/>
+		<excludeFolder url="file://$MODULE_DIR$/.gradle"/>
+		<excludeFolder url="file://$MODULE_DIR$/build"/>
+	</contentEntry>
+	<lib name="Gradle: javaagent" scope="PROVIDED">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/ECommerce-Web/libs/javaagent.jar!/"/>
+	</lib>
+	<lib name="Gradle: dot_net_webservice_stub" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/ECommerce-Web/libs/dot_net_webservice_stub.jar!/"/>
+	</lib>
+	<lib name="Gradle: orderservice_stub" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/ECommerce-Web/libs/orderservice_stub.jar!/"/>
+	</lib>
+	<lib name="Gradle: ojdbc6" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/ECommerce-Web/libs/ojdbc6.jar!/"/>
+	</lib>
+	<lib name="Gradle: javax.servlet:servlet-api:2.5" scope="PROVIDED"/>
+	<lib name="Gradle: javax.jms:jms-api:1.1-rev-1" scope="PROVIDED"/>
+	<lib name="Gradle: com.sun.mail:javax.mail:1.5.2" scope="PROVIDED"/>
+	<lib name="Gradle: javax.activation:activation:1.1" scope="PROVIDED"/>
+	<levels>
+		<level name="Gradle: javax.servlet:servlet-api:2.5" value="project"/>
+		<level name="Gradle: javax.jms:jms-api:1.1-rev-1" value="project"/>
+		<level name="Gradle: com.sun.mail:javax.mail:1.5.2" value="project"/>
+		<level name="Gradle: javax.activation:activation:1.1" value="project"/>
+		<level name="Gradle: org.apache.struts:struts2-core:2.3.16.3" value="project"/>
+		<level name="Gradle: org.apache.struts:struts2-spring-plugin:2.3.16.3" value="project"/>
+		<level name="Gradle: mysql:mysql-connector-java:5.1.33" value="project"/>
+		<level name="Gradle: javax.ws.rs:javax.ws.rs-api:2.0.1" value="project"/>
+		<level name="Gradle: org.glassfish.jersey.containers:jersey-container-jetty-servlet:2.13" value="project"/>
+		<level name="Gradle: org.glassfish.jersey.containers:jersey-container-servlet-core:2.13" value="project"/>
+		<level name="Gradle: javax.servlet:jstl:1.2" value="project"/>
+		<level name="Gradle: javax.xml.ws:jaxws-api:2.2.11" value="project"/>
+		<level name="Gradle: commons-dbcp:commons-dbcp:1.4" value="project"/>
+		<level name="Gradle: org.apache.activemq:activemq-all:5.5.1" value="project"/>
+		<level name="Gradle: org.apache.activemq:activemq-pool:5.5.1" value="project"/>
+		<level name="Gradle: log4j:log4j:1.2.17" value="project"/>
+		<level name="Gradle: org.slf4j:slf4j-log4j12:1.7.7" value="project"/>
+		<level name="Gradle: org.springframework:spring-core:3.2.11.RELEASE" value="project"/>
+		<level name="Gradle: org.springframework:spring-web:3.2.11.RELEASE" value="project"/>
+		<level name="Gradle: org.springframework:spring-context:3.2.11.RELEASE" value="project"/>
+		<level name="Gradle: org.springframework:spring-jdbc:3.2.11.RELEASE" value="project"/>
+		<level name="Gradle: org.springframework:spring-jms:3.2.11.RELEASE" value="project"/>
+		<level name="Gradle: org.springframework:spring-orm:3.2.11.RELEASE" value="project"/>
+		<level name="Gradle: org.springframework:spring-tx:3.2.11.RELEASE" value="project"/>
+		<level name="Gradle: org.springframework:spring-webmvc:3.2.11.RELEASE" value="project"/>
+		<level name="Gradle: org.eclipse.persistence:org.eclipse.persistence.jpa:2.5.2" value="project"/>
+		<level name="Gradle: org.codehaus.castor:castor-xml:1.3.3" value="project"/>
+		<level name="Gradle: org.apache.axis2:axis2-kernel:1.4.1" value="project"/>
+		<level name="Gradle: org.apache.axis2:axis2-codegen:1.4.1" value="project"/>
+		<level name="Gradle: org.apache.axis:axis-jaxrpc:1.4" value="project"/>
+		<level name="Gradle: org.apache.axis:axis:1.4" value="project"/>
+		<level name="Gradle: org.apache.struts.xwork:xwork-core:2.3.16.3" value="project"/>
+		<level name="Gradle: org.freemarker:freemarker:2.3.19" value="project"/>
+		<level name="Gradle: ognl:ognl:3.0.6" value="project"/>
+		<level name="Gradle: commons-fileupload:commons-fileupload:1.3.1" value="project"/>
+		<level name="Gradle: commons-io:commons-io:2.2" value="project"/>
+		<level name="Gradle: org.apache.commons:commons-lang3:3.1" value="project"/>
+		<level name="Gradle: org.glassfish.jersey.containers:jersey-container-servlet:2.13" value="project"/>
+		<level name="Gradle: org.glassfish.jersey.containers:jersey-container-jetty-http:2.13" value="project"/>
+		<level name="Gradle: org.eclipse.jetty:jetty-webapp:9.1.1.v20140108" value="project"/>
+		<level name="Gradle: org.glassfish.jersey.core:jersey-common:2.13" value="project"/>
+		<level name="Gradle: org.glassfish.jersey.core:jersey-server:2.13" value="project"/>
+		<level name="Gradle: org.glassfish.hk2.external:javax.inject:2.3.0-b10" value="project"/>
+		<level name="Gradle: javax.xml.bind:jaxb-api:2.2.9" value="project"/>
+		<level name="Gradle: javax.xml.soap:javax.xml.soap-api:1.3.5" value="project"/>
+		<level name="Gradle: javax.jws:jsr181-api:1.0-MR1" value="project"/>
+		<level name="Gradle: commons-pool:commons-pool:1.5.4" value="project"/>
+		<level name="Gradle: org.apache.activemq:activemq-core:5.5.1" value="project"/>
+		<level name="Gradle: org.apache.geronimo.specs:geronimo-jta_1.0.1B_spec:1.0.1" value="project"/>
+		<level name="Gradle: org.springframework:spring-aop:3.2.11.RELEASE" value="project"/>
+		<level name="Gradle: org.springframework:spring-expression:3.2.11.RELEASE" value="project"/>
+		<level name="Gradle: org.eclipse.persistence:javax.persistence:2.1.0" value="project"/>
+		<level name="Gradle: org.eclipse.persistence:org.eclipse.persistence.asm:2.5.2" value="project"/>
+		<level name="Gradle: org.eclipse.persistence:org.eclipse.persistence.antlr:2.5.2" value="project"/>
+		<level name="Gradle: org.eclipse.persistence:org.eclipse.persistence.jpa.jpql:2.5.2" value="project"/>
+		<level name="Gradle: org.eclipse.persistence:org.eclipse.persistence.core:2.5.2" value="project"/>
+		<level name="Gradle: org.codehaus.castor:castor-core:1.3.3" value="project"/>
+		<level name="Gradle: commons-lang:commons-lang:2.6" value="project"/>
+		<level name="Gradle: commons-collections:commons-collections:3.2.1" value="project"/>
+		<level name="Gradle: javax.inject:javax.inject:1" value="project"/>
+		<level name="Gradle: stax:stax:1.2.0" value="project"/>
+		<level name="Gradle: javax.xml.stream:stax-api:1.0-2" value="project"/>
+		<level name="Gradle: commons-httpclient:commons-httpclient:3.1" value="project"/>
+		<level name="Gradle: org.apache.httpcomponents:httpcore-nio:4.0-beta1" value="project"/>
+		<level name="Gradle: wsdl4j:wsdl4j:1.6.2" value="project"/>
+		<level name="Gradle: backport-util-concurrent:backport-util-concurrent:3.1" value="project"/>
+		<level name="Gradle: org.codehaus.woodstox:wstx-asl:3.2.4" value="project"/>
+		<level name="Gradle: org.apache.ws.commons.schema:XmlSchema:1.4.2" value="project"/>
+		<level name="Gradle: org.apache.neethi:neethi:2.0.4" value="project"/>
+		<level name="Gradle: org.apache.woden:woden-api:1.0M8" value="project"/>
+		<level name="Gradle: org.apache.woden:woden-impl-dom:1.0M8" value="project"/>
+		<level name="Gradle: annogen:annogen:0.1.0" value="project"/>
+		<level name="Gradle: org.apache.ws.commons.axiom:axiom-api:1.2.7" value="project"/>
+		<level name="Gradle: org.apache.ws.commons.axiom:axiom-impl:1.2.7" value="project"/>
+		<level name="Gradle: org.apache.ws.commons.axiom:axiom-dom:1.2.7" value="project"/>
+		<level name="Gradle: javax.mail:mail:1.4" value="project"/>
+		<level name="Gradle: xalan:xalan:2.7.0" value="project"/>
+		<level name="Gradle: org.apache.geronimo.specs:geronimo-stax-api_1.0_spec:1.0.1" value="project"/>
+		<level name="Gradle: xerces:xercesImpl:2.8.1" value="project"/>
+		<level name="Gradle: org.apache.axis2:axis2-adb:1.4.1" value="project"/>
+		<level name="Gradle: asm:asm:3.3" value="project"/>
+		<level name="Gradle: asm:asm-commons:3.3" value="project"/>
+		<level name="Gradle: javassist:javassist:3.11.0.GA" value="project"/>
+		<level name="Gradle: org.eclipse.jetty:jetty-server:9.1.1.v20140108" value="project"/>
+		<level name="Gradle: org.eclipse.jetty:jetty-continuation:9.1.1.v20140108" value="project"/>
+		<level name="Gradle: org.eclipse.jetty:jetty-xml:9.1.1.v20140108" value="project"/>
+		<level name="Gradle: org.eclipse.jetty:jetty-servlet:9.1.1.v20140108" value="project"/>
+		<level name="Gradle: org.glassfish.jersey.bundles.repackaged:jersey-guava:2.13" value="project"/>
+		<level name="Gradle: org.glassfish.hk2:hk2-api:2.3.0-b10" value="project"/>
+		<level name="Gradle: org.glassfish.hk2:hk2-locator:2.3.0-b10" value="project"/>
+		<level name="Gradle: org.glassfish.hk2:osgi-resource-locator:1.0.1" value="project"/>
+		<level name="Gradle: org.glassfish.jersey.core:jersey-client:2.13" value="project"/>
+		<level name="Gradle: javax.validation:validation-api:1.1.0.Final" value="project"/>
+		<level name="Gradle: org.apache.activemq:activeio-core:3.1.2" value="project"/>
+		<level name="Gradle: org.apache.activemq:kahadb:5.5.1" value="project"/>
+		<level name="Gradle: org.apache.activemq.protobuf:activemq-protobuf:1.1" value="project"/>
+		<level name="Gradle: org.osgi:org.osgi.core:4.1.0" value="project"/>
+		<level name="Gradle: org.apache.geronimo.specs:geronimo-j2ee-management_1.1_spec:1.0.1" value="project"/>
+		<level name="Gradle: commons-net:commons-net:2.0" value="project"/>
+		<level name="Gradle: org.jasypt:jasypt:1.7" value="project"/>
+		<level name="Gradle: aopalliance:aopalliance:1.0" value="project"/>
+		<level name="Gradle: stax:stax-api:1.0.1" value="project"/>
+		<level name="Gradle: org.apache.ant:ant:1.7.0" value="project"/>
+		<level name="Gradle: xerces:xmlParserAPIs:2.6.0" value="project"/>
+		<level name="Gradle: org.apache.geronimo.specs:geronimo-activation_1.1_spec:1.0.1" value="project"/>
+		<level name="Gradle: org.apache.geronimo.specs:geronimo-javamail_1.4_spec:1.2" value="project"/>
+		<level name="Gradle: jaxen:jaxen:1.1.1" value="project"/>
+		<level name="Gradle: asm:asm-tree:3.3" value="project"/>
+		<level name="Gradle: javax.servlet:javax.servlet-api:3.1.0" value="project"/>
+		<level name="Gradle: org.eclipse.jetty:jetty-http:9.1.1.v20140108" value="project"/>
+		<level name="Gradle: org.eclipse.jetty:jetty-io:9.1.1.v20140108" value="project"/>
+		<level name="Gradle: org.eclipse.jetty:jetty-util:9.1.1.v20140108" value="project"/>
+		<level name="Gradle: org.eclipse.jetty:jetty-security:9.1.1.v20140108" value="project"/>
+		<level name="Gradle: org.glassfish.hk2:hk2-utils:2.3.0-b10" value="project"/>
+		<level name="Gradle: org.glassfish.hk2.external:aopalliance-repackaged:2.3.0-b10" value="project"/>
+		<level name="Gradle: org.javassist:javassist:3.18.1-GA" value="project"/>
+		<level name="Gradle: org.apache.ant:ant-launcher:1.7.0" value="project"/>
+		<level name="Gradle: org.slf4j:slf4j-api:1.7.7" value="project"/>
+		<level name="Gradle: org.springframework:spring-beans:3.2.11.RELEASE" value="project"/>
+		<level name="Gradle: commons-logging:commons-logging:1.1.3" value="project"/>
+		<level name="Gradle: javax.annotation:javax.annotation-api:1.2" value="project"/>
+		<level name="Gradle: org.apache.geronimo.specs:geronimo-jms_1.1_spec:1.1.1" value="project"/>
+		<level name="Gradle: xml-apis:xml-apis:2.0.2" value="project"/>
+		<level name="Gradle: org.apache.httpcomponents:httpcore:4.3.2" value="project"/>
+		<level name="Gradle: commons-codec:commons-codec:1.6" value="project"/>
+	</levels>
+</component>
