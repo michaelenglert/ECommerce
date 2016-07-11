@@ -1,0 +1,60 @@
+<div class="container">
+	<!-- Page Header -->
+	<br /> <br />
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header">Shopping Cart</h1>
+		</div>
+	</div>
+	<!-- Content -->
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<table class="table table-bordered">
+				<!-- header -->
+				<tr class="well">
+					<td><b>Item</b></td>
+					<td class="tdCenter"><b>Quantity</b></td>
+					<td class="tdRight"><b>Price</b></td>
+					<td />
+				</tr>
+				<!-- cart items -->
+				<tr ng-repeat="cartItem in sc.cartItems track by $index">
+					<td>{{cartItem.title}}</td>
+					<td class="tdCenter">
+						<div class="input-append">
+							<!-- use type=tel instead of  to prevent spinners -->
+							<input class="span3 text-center" type="tel"
+								ng-model="sc.quantity" ng-disabled="true"></input>
+							<button style="display:none" class="btn btn-success" type="button">+</button>
+							<button  style="display:none" class="btn btn-inverse" type="button">-</button>
+						</div>
+					</td>
+					<td class="tdRight">{{cartItem.price}}</td>
+					<td class="tdCenter" title="remove from cart"><a href=""
+						ng-click="sc.RemoveFromCart(sc.cartItems,cartItem,$index)"><span
+							class="glyphicon glyphicon-remove"></span></a></td>
+				</tr>
+				<tr class="well">
+					<td><b>Total</b></td>
+					<td class="tdCenter"><b>{{sc.getTotalCount()}}</b></td>
+					<td class="tdRight"><b>{{sc.getTotalPrice() | currency}}</b></td>
+					<td />
+				</tr>
+			</table>
+			<div class="row" id="divCheckOut">
+				<div class="col-md-8"></div>
+				<div class="col-md-4">
+					<button id="btnCheckout" class="btn btn-block btn-primary" ng-click="sc.CheckOut()"
+						ng-disabled="sc.dataLoading">
+						
+						<img ng-if="sc.dataLoading"
+							src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+
+						<span class="glyphicon glyphicon-ok"></span> Check Out
+					</button>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

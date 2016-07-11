@@ -1,0 +1,25 @@
+div.products-margin {
+    margin-bottom: 100px;
+    align:center;
+}
+.font-size-sup{
+	font-size:medium;
+}
+.font-size-strong{
+	font-size:large;
+}
+.disable_a_href{
+    pointer-events: none;
+}
+.cart-color{
+	color: #f0ad4e;
+}
+.table td.tdRight {
+  text-align: right;
+}
+.table td.tdCenter {
+  text-align: center;
+}
+.table-nonfluid {
+   width: auto;
+}
