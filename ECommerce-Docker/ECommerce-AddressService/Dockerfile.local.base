@@ -1,0 +1,53 @@
+#!/bin/bash
+FROM appdynamics/ecommerce-java:oracle-java7
+
+# Install packages
+RUN yum -y install unzip git curl
+
+#TOMCAT
+ENV TOMCAT_MINOR_VERSION 8.0.14
+ENV CATALINA_HOME /tomcat
+
+#INSTALL TOMCAT
+COPY /apache-tomcat.tar.gz /apache-tomcat.tar.gz
+RUN tar zxf /apache-tomcat.tar.gz \
+    && rm apache-tomcat.tar.gz \
+    && mv apache-tomcat* tomcat 
+RUN cd ${CATALINA_HOME}/bin;chmod +x *.sh
+
+ADD rds-dbwrapper.war ${CATALINA_HOME}/webapps/
+
+# App Server Agent Install
+ADD AppServerAgent.zip /
+RUN unzip -q /AppServerAgent.zip -d ${CATALINA_HOME}/appagent;rm /AppServerAgent.zip
+
+# (Placeholder - build script will update with zip/rpm directives)
+# Machine Agent Install
+
+# Analytics Agent config
+ADD configAnalytics.sh /
+
+# Startup scripts
+ADD env.sh /
+
+ADD start-machine-agent.sh /
+ADD start-appserver-agent.sh /
+
+RUN chmod +x /env.sh
+RUN chmod +x /start-machine-agent.sh
+RUN chmod +x /start-appserver-agent.sh
+RUN chmod +x /configAnalytics.sh
+
+RUN mkdir /tmp/logs
+RUN chmod +x /tmp/logs
+
+ADD startup.sh /
+RUN chmod +x /startup.sh
+
+WORKDIR /
+CMD /startup.sh && tail -f /var/log/dmesg
+
+#Exposing ports
+EXPOSE 80
+EXPOSE 8080
+EXPOSE 8090
