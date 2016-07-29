@@ -4,11 +4,11 @@ MAINTAINER Jeff Morgan (jeff.morgan@appdynamics.com)
 
 ################## BEGIN INSTALLATION ######################
 
-# Update the repository sources list
-RUN apt-get update
-
 # Install Packages
-RUN apt-get -y install mysql-server
+RUN apt-get update
+RUN echo "mysql-server-5.7 mysql-server/root_password password singcontroller" | debconf-set-selections
+RUN echo "mysql-server-5.7 mysql-server/root_password_again password singcontroller" | debconf-set-selections
+RUN apt-get -yq install mysql-server-5.7
 RUN apt-get -y install openssh-server
 
 # Setup SSH
@@ -19,7 +19,7 @@ RUN sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/ss
 RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
 
 # Configure MySQL
-RUN sed -i '/^bind-address/c\bind-address=0.0.0.0' /etc/mysql/my.cnf
+RUN sed -i '/^bind-address/c\bind-address=0.0.0.0' /etc/mysql/mysql.conf.d/mysqld.cnf
 
 # Add startup script
 ADD /startup.sh /root/

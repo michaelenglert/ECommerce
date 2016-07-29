@@ -1,4 +1,4 @@
-FROM appdynamics/ecommerce-java:apache24
+FROM appddemo/ecommerce-java:apache24
 
 # set timezone to UTC
 RUN mv /etc/localtime /etc/localtime.bak

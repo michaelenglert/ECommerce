@@ -1,4 +1,4 @@
-FROM appdynamics/ecommerce-java:oracle-java7
+FROM appddemo/ecommerce-java:oracle-java7
 
 # set timezone to UTC
 RUN mv /etc/localtime /etc/localtime.bak

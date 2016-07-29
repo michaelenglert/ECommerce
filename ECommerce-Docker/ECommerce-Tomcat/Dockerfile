@@ -1,4 +1,6 @@
-FROM appdynamics/ecommerce-java:oracle-java7
+FROM appddemo/ecommerce-java:oracle-java7
+
+RUN export TERM=xterm
 
 # set timezone to UTC
 RUN mv /etc/localtime /etc/localtime.bak
@@ -15,27 +17,12 @@ RUN chmod +x /env.sh
 COPY /apache-tomcat.tar.gz /apache-tomcat.tar.gz
 RUN tar zxf /apache-tomcat.tar.gz \
     && rm apache-tomcat.tar.gz \
-    && mv apache-tomcat* tomcat 
+    && mv apache-tomcat* tomcat
 RUN cd ${CATALINA_HOME}/bin;chmod +x *.sh
 
 # App Server Agent Install
 ADD AppServerAgent.zip /
 RUN unzip -q /AppServerAgent.zip -d ${CATALINA_HOME}/appagent;rm AppServerAgent.zip
-
-# (Placeholder - build script will update with zip/rpm directives)
-# Machine Agent Install
-
-# (Placeholder - build script will update for analytics-agent install)
-# Analytics Agent Install
-
-# Machine Agent scripts for Run Book Automation
-ADD increase-pool.sh ${MACHINE_AGENT_HOME}/local-scripts/
-ADD shrink-pool.sh ${MACHINE_AGENT_HOME}/local-scripts/
-RUN chmod +x ${MACHINE_AGENT_HOME}/local-scripts/*.sh
-
-# Analytics config
-ADD ecommerce-log4j.job ${MACHINE_AGENT_HOME}/monitors/analytics-agent/conf/job/
-ADD configAnalytics.sh /
 
 RUN mkdir -p /ECommerce-Java/ECommerce-Web/build/libs
 RUN mkdir -p /ECommerce-Java/ECommerce-JMS/build/libs
@@ -46,7 +33,7 @@ ADD appdynamicspilotjms.war /ECommerce-Java/ECommerce-JMS/build/libs/
 ADD cart.war /ECommerce-Java/ECommerce-WS/build/libs/
 
 RUN mkdir -p /ECommerce-Java/libs
-ADD ojdbc6.jar /ECommerce-Java/libs/
+ADD ojdbc6.jar /ECommerce-Java/ECommerce-Web/libs/
 
 ADD build.gradle /ECommerce-Java/
 ADD database.properties /ECommerce-Java/
@@ -65,7 +52,7 @@ ADD app-agent-config-dbcam.xml /
 RUN chmod +x /startup.sh
 RUN chmod +x /start-machine-agent.sh
 RUN chmod +x /start-appserver-agent.sh
-RUN chmod +x /configAnalytics.sh
+#RUN chmod +x /configAnalytics.sh
 
 RUN export TERM=xterm
 
