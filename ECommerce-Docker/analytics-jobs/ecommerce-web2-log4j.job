@@ -1,0 +1,28 @@
+version: 2
+
+enabled: true
+
+source:
+  type: file
+  path: /appdynamics/shared-logs/web2
+  nameGlob: cart.log
+  startAtEnd: false
+
+multiline:
+   startsWith: "["
+
+fields:
+   sourceType: ECommerce-log4j
+   nodeName: web2
+   tierName: ECommerce-Services
+   appName: ECommerce-Rob
+
+grok:
+  patterns:
+    - "\\[%{LOGLEVEL:logLevel}%{SPACE}\\]  \\[%{DATA:threadName}\\]  \\[%{JAVACLASS:class}\\]  \\[%{REQUEST_GUID:guid}\\]  %{GREEDYDATA:logMessage}"
+
+requestGuid:
+  source: guid
+
+eventTimestamp:
+   pattern: "MMM d, yyyy h:mm:ss aa"

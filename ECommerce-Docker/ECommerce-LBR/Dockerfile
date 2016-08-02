@@ -1,4 +1,11 @@
-FROM appddemo/ecommerce-java:apache24
+FROM appddemo/ecommerce-java:oracle-java7
+
+# Install Apache 2.4 (Centos 6 uses 2.2 by default)
+RUN useradd -U apache
+RUN cd /etc/yum.repos.d/; curl -O -k  https://repos.fedorapeople.org/repos/jkaluza/httpd24/epel-httpd24.repo
+RUN yum -y install httpd24.x86_64
+ENV HTTPD_24 /opt/rh/httpd24/root/etc/httpd
+ENV HTTPD_DOC_ROOT ${HTTPD_24}/../../var/www/html
 
 # set timezone to UTC
 RUN mv /etc/localtime /etc/localtime.bak
@@ -15,8 +22,6 @@ ADD update-rum-key.sh /
 RUN chmod +x /update-rum-key.sh
 RUN cp /update-rum-key.sh /usr/local/bin/update-rum-key
 
-# Add Javascript agent to httpd doc root
-ADD adrum.js ${HTTPD_DOC_ROOT}/adrum.js
 
 # Add native SDK
 ENV SDK_HOME /opt
@@ -42,19 +47,6 @@ RUN ln -s ${NATIVE_HOME}/WebServerAgent/Apache/libmod_appdynamics.so $HTTPD_24/m
 # ECommerce reverse proxy configuration
 ADD ajp_proxy.conf ${HTTPD_24}/conf.d/
 
-# (Placeholder - build script will update with zip/rpm directives)
-# Machine Agent Install
-# Zip Machine Agent Install
-ENV MACHINE_AGENT_HOME /machine-agent
-ADD MachineAgent.zip /
-RUN unzip -oq /MachineAgent.zip -d ${MACHINE_AGENT_HOME}
-RUN rm MachineAgent.zip
-RUN echo "export MACHINE_AGENT_HOME=${MACHINE_AGENT_HOME}" >> /env.sh
-
-# Start the Machine Agent
-ADD start-machine-agent.sh /
-RUN chmod 744 /start-machine-agent.sh
-
 # Add utility scripts to /usr/local/bin
 ADD tail-proxy-log /usr/local/bin/
 ADD tail-access-log /usr/local/bin/
@@ -65,15 +57,6 @@ ADD startup.sh $NATIVE_HOME/
 RUN chmod 744 ${NATIVE_HOME}/startup.sh
 RUN chown -R apache:apache ${NATIVE_HOME}
 RUN chmod 7777 -R ${NATIVE_HOME}
-
-ADD start-machine-agent.sh $MACHINE_AGENT_HOME/
-RUN chmod 744 ${MACHINE_AGENT_HOME}/start-machine-agent.sh
-
-# Configure Log Analytics
-ADD configAnalytics.sh /
-RUN chmod +x /configAnalytics.sh
-ADD ecommerce-lbr-httpserver-error-log.job ${MACHINE_AGENT_HOME}/monitors/analytics-agent/conf/job/
-ADD ecommerce-lbr-httpserver-access-log.job ${MACHINE_AGENT_HOME}/monitors/analytics-agent/conf/job/
 
 # Run startup script and tail Apache error log
 CMD ${NATIVE_HOME}/startup.sh && tail -f ${HTTPD_24}/logs/error_log

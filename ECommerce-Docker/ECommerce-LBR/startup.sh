@@ -17,9 +17,6 @@ sed -i "s/<your_account_name>/${ACCOUNT_NAME%%_*}/g" ${HTTPD_24}/02-appd.conf
 sed -i "s/<your_access_key>/${ACCESS_KEY}/g" ${HTTPD_24}/02-appd.conf
 mv ${HTTPD_24}/02-appd.conf ${HTTPD_24}/conf.modules.d/02-appd.conf
 
-# Replacing CDN endpoint for early access to JS Agent
-sed -i "s/cdn.appdynamics.com/s3-us-west-2.amazonaws.com\/adrum/g" ${HTTPD_DOC_ROOT}/adrum.js
-
 # Run with docker run [...] -e NO_AGENT=true appdynamics/ecommerce-lbr to disable Web Server Agent/Proxy
 if [ -z "${NO_AGENT}" ]; then 
   echo "Starting Proxy Agent"
@@ -30,8 +27,3 @@ else
 fi
 
 /etc/init.d/httpd24-httpd start
-
-# Start Machine Agent 
-# NOTE: Machine Agent/Web Server Agent race condition
-# Start manually with: docker exec lbr /start-machine-agent.sh
-# ${MACHINE_AGENT_HOME}/start-machine-agent.sh
