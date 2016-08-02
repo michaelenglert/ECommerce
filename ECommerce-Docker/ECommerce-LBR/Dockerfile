@@ -1,4 +1,4 @@
-FROM appddemo/ecommerce-java:oracle-java7
+FROM appddemo/ecommerce-java:16.08.02
 
 # Install Apache 2.4 (Centos 6 uses 2.2 by default)
 RUN useradd -U apache

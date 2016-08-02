@@ -1,4 +1,4 @@
-FROM appddemo/ecommerce-java:oracle-java7
+FROM appddemo/ecommerce-java:16.08.02
 
 RUN mkdir -p /appdynamics/agents/machine-agent && mkdir /appdynamics/logs
 ADD MachineAgent.zip /
