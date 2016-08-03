@@ -1,19 +1,20 @@
 ####  path to oracle db and oracle jdk
-ORACLE_DB_RPM=/Users/rbolton/Documents/Code/appd/agents/oracle-xe-11.2.0-1.0.x86_64.rpm
-ORACLE_JAVA=/Users/rbolton/Documents/Code/appd/agents/jdk-7u79-linux-x64.rpm
+ORACLE_DB_RPM=
+ORACLE_JAVA=
 
 #### Copy files over
 cp ${ORACLE_DB_RPM} ./ECommerce-Oracle
 cp ${ORACLE_JAVA} ./ECommerce-Java/jdk-linux-x64.rpm
 
 #### Build images
+DATE=`date +%y.%m.%d`
 cd ECommerce-Oracle
-docker build -t appddemo/ecommerce-oracle:latest .
+docker build -t appddemo/ecommerce-oracle:${DATE} .
 cd ../ECommerce-MySQL
-docker build -t appddemo/ecommerce-mysql:latest .
+docker build -t appddemo/ecommerce-mysql:${DATE} .
 cd ../ECommerce-Java
-docker build -t appddemo/ecommerce-java:oracle-java7 .
+docker build -t appddemo/ecommerce-java:${DATE} .
 cd ../ECommerce-ActiveMQ
-docker build -t appddemo/ecommerce-activemq .
+docker build -t appddemo/ecommerce-activemq:${DATE} .
 
 

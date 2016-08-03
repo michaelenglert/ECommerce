@@ -1,8 +1,9 @@
 # VARIABLES
-ZIP_MACHINE_AGENT=/Users/rbolton/Documents/Code/appd/agents/MachineAgent-4.2.1.7.zip
-WEB_SERVER_AGENT=/Users/rbolton/Documents/Code/appd/agents/appdynamics-sdk-native-nativeWebServer-64bit-linux-4.1.5.2.tar.gz
-APP_SERVER_AGENT=/Users/rbolton/Documents/Code/appd/agents/AppServerAgent-4.2.1.7.zip
-LOCAL_TOMCAT=/Users/rbolton/Documents/Code/appd/agents/apache-tomcat-7.0.70.tar.gz
+ZIP_MACHINE_AGENT=
+WEB_SERVER_AGENT=
+APP_SERVER_AGENT=
+LOCAL_TOMCAT=
+AGENT_VERSION=
 
 (cp ${APP_SERVER_AGENT} ECommerce-Tomcat/AppServerAgent.zip)
 (cp ${LOCAL_TOMCAT} ECommerce-Tomcat/apache-tomcat.tar.gz)
@@ -31,6 +32,8 @@ echo "Copied machine agent to ECommerce-MachineAgent"
 (cp ../ECommerce-Java/zips.sql ECommerce-Tomcat/)
 echo "Files copied over"
 
-cd ECommerce-LBR && docker build --no-cache -t appddemo/ecommerce-lbr .
-cd ../ECommerce-Tomcat && docker build --no-cache -t appddemo/ecommerce-tomcat .
-cd ../ECommerce-MachineAgent && docker build --no-cache -t appddemo/machineagent-analytics .
+DATE=`date +%y.%m.%d`
+VERSION="${AGENT_VERSION}-${DATE}"
+cd ECommerce-LBR && docker build --no-cache -t appddemo/ecommerce-lbr:$VERSION .
+cd ../ECommerce-Tomcat && docker build --no-cache -t appddemo/ecommerce-tomcat:$VERSION .
+cd ../ECommerce-MachineAgent && docker build --no-cache -t appddemo/machineagent-analytics:$VERSION .
