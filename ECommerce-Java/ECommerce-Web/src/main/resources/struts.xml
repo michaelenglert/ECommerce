@@ -51,6 +51,13 @@
 			<result name="LOGOUT" type="redirectAction">UserLogOut</result>
 			<result name="ENDPAGE">/WEB-INF/presentation/endPage.jsp</result>
 		</action>
+
+		<action name="Order" method="update" class="com.appdynamicspilot.action.OrderAction">
+			<interceptor-ref name="commonStack" />
+			<result name="SUCCESS">/WEB-INF/presentation/endPage.jsp</result>
+			<result name="FAILURE" type="redirectAction">ViewItems</result>
+			<result name="LOGOUT" type="redirectAction">UserLogOut</result>
+		</action>
         
         <action name="AsynCall" class="com.appdynamicspilot.action.AsynCallAction" method="createChildThread">
             <interceptor-ref name="commonStack" />

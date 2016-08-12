@@ -15,6 +15,16 @@
     <res-auth>Container</res-auth>
   </resource-ref>
 
+  <!-- plain ole servlet for Thread Contention use case -->
+  <servlet>
+    <servlet-name>changeOrder</servlet-name>
+    <servlet-class>com.appdynamics.inventory.servlet.ChangeOrderServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>changeOrder</servlet-name>
+    <url-pattern>/changeOrder</url-pattern>
+  </servlet-mapping>
+
   <!-- these are for JAX-WS -->
   <servlet>
     <servlet-name>jaxws-servlet</servlet-name>
@@ -24,4 +34,5 @@
     <servlet-name>jaxws-servlet</servlet-name>
     <url-pattern>/orderService</url-pattern>
   </servlet-mapping>
+
 </web-app>

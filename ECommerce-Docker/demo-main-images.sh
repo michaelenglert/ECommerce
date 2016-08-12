@@ -16,5 +16,7 @@ cd ../ECommerce-Java
 docker build -t appddemo/ecommerce-java:${DATE} .
 cd ../ECommerce-ActiveMQ
 docker build -t appddemo/ecommerce-activemq:${DATE} .
+cd ../ECommerce-Uninstrumented
+docker build -t appddemo/ecommerce-uninstrumented:${DATE} .
 
 

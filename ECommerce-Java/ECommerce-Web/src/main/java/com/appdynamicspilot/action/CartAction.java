@@ -95,7 +95,7 @@ public class CartAction extends ActionSupport implements Preparable,
     public String addToCart() {
 
 		if (Math.random() <= 0.05) {
-			log.info("Number of items in inventory : 0");
+			log.info("Number of items in inventory : 0, item is A Clockwork Orange");
             log.error("Unable to add item to cart");
         } else {
 			Integer itemCount = (int) Math.ceil(Math.random() * 100);
