@@ -1,6 +1,6 @@
 #!/bin/bash
 VERSION_AGENT=4.2.0.2-16.08.02
-APP_SERVER_AGENT=/Users/rbolton/Documents/Code/appd/agents/AppServerAgent-4.2.1.7.zip
+APP_SERVER_AGENT=/Users/rbolton/Documents/Code/appd/agents/AppServerAgent-4.2.5.0.zip
 LOCAL_TOMCAT=/Users/rbolton/Documents/Code/appd/agents/apache-tomcat-7.0.70.tar.gz
 CONTR_HOST=dev.demo.appdynamics.com
 CONTR_PORT=8090

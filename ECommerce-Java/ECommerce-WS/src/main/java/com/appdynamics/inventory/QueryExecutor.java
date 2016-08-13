@@ -27,6 +27,7 @@ public class QueryExecutor {
 
     private final static Logger LOGGER = Logger.getLogger(QueryExecutor.class.getName());
     private String oracleQueryString;
+    private String threadQuery;
     private DataSource dataSource = null;
 
     public String getOracleQueryString() {
@@ -43,6 +44,14 @@ public class QueryExecutor {
         this.dataSource = dataSource;
     }
 
+    public String getOracleThreadQuery() {
+        return threadQuery;
+    }
+    public void setOracleThreadQuery(String oracleThreadQuery) {
+        this.threadQuery = oracleThreadQuery;
+    }
+
+
     public void executeOracleQuery() {
         Connection connection = null;
         Statement stmt = null;
@@ -50,6 +59,22 @@ public class QueryExecutor {
             connection = getDataSource().getConnection();
             stmt = connection.createStatement();
             stmt.execute(getOracleQueryString());
+        } catch (SQLException sqle) {
+            LOGGER.error("This may be ignored in case of Oracle is not setup");
+            LOGGER.error(sqle.getMessage());
+        }  finally {
+            if (connection != null) {try{connection.close();}catch (SQLException sqle) {}}
+            if (stmt != null) {try{stmt.close();}catch (SQLException sqle) {}}
+        }
+    }
+
+    public void executeOrderUpdateQuery() {
+        Connection connection = null;
+        Statement stmt = null;
+        try {
+            connection = getDataSource().getConnection();
+            stmt = connection.createStatement();
+            stmt.execute("update world.ORDERS SET ORDERDATE=to_date('13-JAN-05') WHERE ORDERID=11078");
         } catch (SQLException sqle) {
             LOGGER.error("This may be ignored in case of Oracle is not setup");
             LOGGER.error(sqle.getMessage());

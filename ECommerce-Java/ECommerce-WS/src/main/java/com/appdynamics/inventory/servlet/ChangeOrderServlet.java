@@ -11,6 +11,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import com.appdynamics.inventory.AvailableInventory;
 import com.appdynamics.inventory.QueryExecutor;
@@ -36,27 +38,51 @@ public class ChangeOrderServlet extends HttpServlet {
         }
         */
 
-        ThirdPartyInventoryCheck tp1 = new ThirdPartyInventoryCheck("ThirdPartyInventoryCheck", "api.mainsupplier.com", "responsetime:2");
-        tp1.start();
-        ThirdPartyInventoryCheck tp2 = new ThirdPartyInventoryCheck("ThirdPartyInventoryCheck", "api.secondarysupplier.com", "responsetime:0");
-        tp2.start();
-
-        try  {
-            tp1.join();
-            tp2.join();
-        } catch (InterruptedException e)  {}
-
-        OrderManager om = new OrderManager();
-        om.updateOrder();
-
-        QueryExecutor oracleItems = (QueryExecutor) SpringContext.getBean("queryExecutor");
-        oracleItems.executeOracleQuery();
+        this.execute();
 
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
         out.println("<html><body>");
         out.println("<h1>Thread Contention</h1>");
         out.println("</body></html>");
+    }
+
+    void execute() {
+        String trigger1 = "responsetime:0";
+        String trigger2 = "responsetime:0";
+
+        Date date = new Date();
+        SimpleDateFormat minutes = new SimpleDateFormat("m");
+        String m = minutes.format(date);
+        if (Integer.parseInt(m) < 20 && Math.random() < .25) {
+            trigger1 = "responsetime:2";
+            trigger2 = "responsetime:1";
+        }
+
+        ThirdPartyInventoryCheck tp1 = new ThirdPartyInventoryCheck("MainSupplierInventoryCheck", "api.mainsupplier.com", trigger1);
+        tp1.start();
+        QueryExecutor oracleItems = (QueryExecutor) SpringContext.getBean("queryExecutor");
+        OrderManager om = new OrderManager();
+        om.setDbConn(oracleItems);
+        om.updateOrder();
+
+        ThirdPartyInventoryCheck tp2 = new ThirdPartyInventoryCheck("SecondarySupplierInventoryCheck", "api.secondarysupplier.com", trigger2);
+        tp2.start();
+        oracleItems.executeOrderUpdateQuery();
+        om.updateOrder();
+
+        processResponse(tp1, tp2);
+    }
+
+    void processResponse(ThirdPartyInventoryCheck tp1, ThirdPartyInventoryCheck tp2) {
+        this.filterData(tp1, tp2);
+    }
+
+    void filterData(ThirdPartyInventoryCheck tp1, ThirdPartyInventoryCheck tp2) {
+        try  {
+            tp1.join();
+            tp2.join();
+        } catch (InterruptedException e)  {}
     }
 }
 
@@ -81,10 +107,22 @@ class ThirdPartyInventoryCheck extends Thread {
 
     public String checkAvailability() {
         String r = "";
+        this.lockAvailableInventory();
+        return "foo";
+    }
+
+    public void lockAvailableInventory() {
+        this.determineInventory();
+    }
+
+    public void determineInventory() {
+        this.process();
+    }
+
+    public void process() {
         try {
-            r = this.doRequest();
+            this.doRequest();
         } catch (IOException e) {}
-        return r;
     }
 
     public String doRequest() throws IOException {
@@ -103,22 +141,13 @@ class ThirdPartyInventoryCheck extends Thread {
         in.close();
 
         String r = parseResponse(response.toString());
-        String foo = this.determineInventory(r);
 
         this.ai.updateSupplier("foo");
         this.ai.updateInventory(1);
-        return foo;
+        return "foo";
     }
 
     public String parseResponse(String response) {
-        int n=0;
-        for (char c : response.toCharArray()) {
-            n++;
-        }
-        return response;
-    }
-
-    public String determineInventory(String response) {
         int n=0;
         for (char c : response.toCharArray()) {
             n++;
@@ -129,8 +158,15 @@ class ThirdPartyInventoryCheck extends Thread {
 
 class OrderManager {
 
+    public QueryExecutor dbConn;
+
+    public void setDbConn(QueryExecutor dbConn) {
+        this.dbConn = dbConn;
+    }
+
     void updateOrder() {
-        this.update(1000);
+
+        this.update(100000);
     }
 
     Integer update(Integer limit) {
@@ -140,6 +176,9 @@ class OrderManager {
         for(int i=1; i< limit; i++){
             count++;
         }
+
+        dbConn.executeOrderUpdateQuery();
+
         return count;
     }
 }
