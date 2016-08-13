@@ -14,6 +14,7 @@ SHARED_LOGS=
 AWS_ACCESS_KEY=
 AWS_SECRET_KEY=
 
+echo -n "uninstrumented"; docker run --name uninstrumented -d -p 3000:3000 appddemo/ecommerce-uninstrumented:$VERSION_BASE
 echo -n "oracle-db: "; docker run --name oracle-db -d -p 1521:1521 -p 2222:22 appddemo/ecommerce-oracle:${VERSION_BASE}
 echo -n "db: "; docker run --name db -e MYSQL_ROOT_PASSWORD=singcontroller -p 3306:3306 -p 2223:22 -d appddemo/ecommerce-mysql:${VERSION_BASE}
 echo -n "jms: "; docker run --name jms -d appddemo/ecommerce-activemq:${VERSION_BASE}
@@ -25,7 +26,7 @@ echo -n "ws: "; docker run --name ws -h ${APP_NAME}-ws -e create_schema=true -e 
 	-e CONTROLLER=${CONTR_HOST} -e APPD_PORT=${CONTR_PORT} \
 	-e NODE_NAME=${APP_NAME}_WS_NODE -e APP_NAME=$APP_NAME -e TIER_NAME=Inventory-Services \
 	-e APPDYNAMICS_AGENT_UNIQUE_HOST_ID=${UNIQUE_HOST_ID} --link db:db \
-	--link jms:jms --link oracle-db:oracle-db -d appddemo/ecommerce-tomcat:$VERSION_AGENT
+	--link jms:jms --link oracle-db:oracle-db --link uninstrumented:api.mainsupplier.com --link uninstrumented:api.secondarysupplier.com -d appddemo/ecommerce-tomcat:$VERSION_AGENT
 
 echo -n "web: "; docker run --name web -h ${APP_NAME}-web -v ${SHARED_LOGS}/web1:/tomcat/logs -e JVM_ROUTE=route1 -e web=true \
 	-e ACCOUNT_NAME=${ACCOUNT_NAME} -e ACCESS_KEY=${ACCESS_KEY} -e EVENT_ENDPOINT=${EVENT_ENDPOINT} \
