@@ -15,7 +15,7 @@ fields:
    sourceType: ECommerce-log4j
    nodeName: web2
    tierName: ECommerce-Services
-   appName: ECommerce-Rob
+   appName: ECommerce-GQ
 
 grok:
   patterns:

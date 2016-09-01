@@ -1,18 +1,27 @@
 #!/bin/bash
 
-# VARIABLES
-CONTR_HOST=
-CONTR_PORT=
-APP_NAME=
-VERSION_AGENT=
-VERSION_BASE=
-ACCOUNT_NAME=
-ACCESS_KEY=
-EVENT_ENDPOINT=
-UNIQUE_HOST_ID=
-SHARED_LOGS=
+
+VERSION_AGENT=4.2.5.0-16.08.12
+APP_SERVER_AGENT=/Users/gabriella.querales/Documents/AppDyn/Code/appd/agents/AppServerAgent-4.2.4.1.zip
+LOCAL_TOMCAT=/Users/gabriella.querales/Documents/AppDyn/Code/appd/agents/apache-tomcat-7.0.70.tar.gz
+CONTR_HOST=dev.demo.appdynamics.com
+CONTR_PORT=8090
+APP_NAME=ECommerce-GQ
+VERSION_BASE=16.08.02
+ACCOUNT_NAME=customer1_f16aea9b-844d-476d-92db-60f3acaa620d
+ACCESS_KEY=4dea0c08-003b-4732-b07d-7abec9c098ba
+EVENT_ENDPOINT=https://analytics.api.appdynamics.com
+UNIQUE_HOST_ID=gabriella.querales
+SHARED_LOGS=/Users/gabriella.querales/Documents/AppDyn/Code/appd/agents/sharedAppDLogs
 AWS_ACCESS_KEY=
 AWS_SECRET_KEY=
+
+docker stop $(docker ps -a -q)
+docker rm $(docker ps -a -q)
+echo "Docker web containers stopped"
+
+sleep 30
+
 
 echo -n "oracle-db: "; docker run --name oracle-db -d -p 1521:1521 -p 2222:22 appddemo/ecommerce-oracle:${VERSION_BASE}
 echo -n "db: "; docker run --name db -e MYSQL_ROOT_PASSWORD=singcontroller -p 3306:3306 -p 2223:22 -d appddemo/ecommerce-mysql:${VERSION_BASE}
@@ -69,5 +78,5 @@ echo -n "msg: "; docker run --name msg -h ${APP_NAME}-msg -e jms=true \
 	-e APPDYNAMICS_AGENT_UNIQUE_HOST_ID=${UNIQUE_HOST_ID} \
 	--link db:db --link jms:jms --link oracle-db:oracle-db --link fulfillment:fulfillment -d appddemo/ecommerce-tomcat:$VERSION_AGENT
 
-exit 0
+docker ps
 
