@@ -44,6 +44,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+
+
 public class CartAction extends ActionSupport implements Preparable,
         ServletResponseAware, ServletRequestAware {
     private static final Logger log = Logger.getLogger(CartAction.class);
@@ -61,6 +63,11 @@ public class CartAction extends ActionSupport implements Preparable,
     private HttpServletRequest request;
     private HttpServletResponse response;
     private boolean checkMe;
+
+
+
+
+
 
     private static String generateInvoice(ArrayOfOrderDetail orderDetail) {
         DotNetClient client = new DotNetClient();
@@ -93,6 +100,10 @@ public class CartAction extends ActionSupport implements Preparable,
 
     /*Adding selected items to the cart*/
     public String addToCart() {
+
+     // log.setAdditivity(false);
+
+        log.setAdditivity(false);
         String[] books;
         books = new String[11];
 
@@ -136,14 +147,16 @@ public class CartAction extends ActionSupport implements Preparable,
 
 
 		if (Math.random() <= 0.05) {
-		//	log.info("Number of items in inventory : 0, Item: Unbreakable, price: 26.95");
+           // log.setAdditivity(true);
             log.error("Unable to add item to cart. Number of items in the inventory: 0, Item: Unbreakable, price: 36.95");
+          //  log.setAdditivity(false);
 
         } else {
+          //  log.setAdditivity(true);
 			Integer itemCount = (int) Math.ceil(Math.random() * 100);
             Integer i = (int) Math.floor(Math.random() * 10);
-
         	log.info("Number of items in the inventory: " + itemCount + ", Item: " + books[i] + ", price: " + price [i]);
+            //log.setAdditivity(false);
 		}		
 
         User user = (User) ActionContext.getContext().getSession()
