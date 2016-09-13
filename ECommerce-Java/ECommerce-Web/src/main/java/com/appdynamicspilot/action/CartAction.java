@@ -145,7 +145,7 @@ public class CartAction extends ActionSupport implements Preparable,
         books[9]= "The Tourist";
         price[9] = 16.95;
 
-
+        log.setAdditivity(true);
 		if (Math.random() <= 0.05) {
            // log.setAdditivity(true);
             log.error("Unable to add item to cart. Number of items in the inventory: 0, Item: Unbreakable, price: 36.95");
