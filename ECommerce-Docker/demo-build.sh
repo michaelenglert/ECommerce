@@ -1,9 +1,20 @@
-# VARIABLES
-ZIP_MACHINE_AGENT=/Users/rbolton/Documents/Code/appd/agents/MachineAgent-4.2.5.0.zip
-WEB_SERVER_AGENT=/Users/rbolton/Documents/Code/appd/agents/appdynamics-sdk-native-nativeWebServer-64bit-linux-4.2.5.0.tar.gz
-APP_SERVER_AGENT=/Users/rbolton/Documents/Code/appd/agents/AppServerAgent-4.2.5.0.zip
-LOCAL_TOMCAT=/Users/rbolton/Documents/Code/appd/agents/apache-tomcat-7.0.70.tar.gz
-AGENT_VERSION=4.2.5.0
+#
+# Rob's VARIABLES
+# 
+#ZIP_MACHINE_AGENT=/Users/rbolton/Documents/Code/appd/agents/MachineAgent-4.2.5.0.zip
+#WEB_SERVER_AGENT=/Users/rbolton/Documents/Code/appd/agents/appdynamics-sdk-native-nativeWebServer-64bit-linux-4.2.5.0.tar.gz
+#APP_SERVER_AGENT=/Users/rbolton/Documents/Code/appd/agents/AppServerAgent-4.2.5.0.zip
+#LOCAL_TOMCAT=/Users/rbolton/Documents/Code/appd/agents/apache-tomcat-7.0.70.tar.gz
+#AGENT_VERSION=4.2.5.0
+
+#
+# GQ's VARIABLES
+# 
+
+ZIP_MACHINE_AGENT=/Users/gabriella.querales/Documents/AppDyn/Code/agents/MachineAgent-4.2.5.1.zip
+WEB_SERVER_AGENT=/Users/gabriella.querales/Documents/AppDyn/Code/agents/appdynamics-sdk-native-nativeWebServer-64bit-linux-4.2.5.1.tar.gz
+APP_SERVER_AGENT=/Users/gabriella.querales/Documents/AppDyn/Code/agents/AppServerAgent-4.2.5.1.zip			
+LOCAL_TOMCAT=/Users/gabriella.querales/Documents/AppDyn/Code/agents/apache-tomcat-7.0.70.tar.gz
 
 (cp ${APP_SERVER_AGENT} ECommerce-Tomcat/AppServerAgent.zip)
 (cp ${LOCAL_TOMCAT} ECommerce-Tomcat/apache-tomcat.tar.gz)
