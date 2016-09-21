@@ -44,8 +44,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-
-
 public class CartAction extends ActionSupport implements Preparable,
         ServletResponseAware, ServletRequestAware {
     private static final Logger log = Logger.getLogger(CartAction.class);
@@ -63,11 +61,6 @@ public class CartAction extends ActionSupport implements Preparable,
     private HttpServletRequest request;
     private HttpServletResponse response;
     private boolean checkMe;
-
-
-
-
-
 
     private static String generateInvoice(ArrayOfOrderDetail orderDetail) {
         DotNetClient client = new DotNetClient();
@@ -101,62 +94,12 @@ public class CartAction extends ActionSupport implements Preparable,
     /*Adding selected items to the cart*/
     public String addToCart() {
 
-     // log.setAdditivity(false);
-
-        log.setAdditivity(false);
-        String[] books;
-        books = new String[11];
-
-        double [] price;
-        price= new double[11];
-
-       /* Create array with book titles */
-
-        books[0]= "A Clockwork Orange";
-        price[0] = 35.95;
-
-        books[1]= "The Goldfinch: A Novel";
-        price[1] = 36.75;
-
-        books[2]= "Personal";
-        price[2] = 16.95;
-
-        books[3]= "Farewell To Arms";
-        price[3] = 30.95;
-
-        books[4]= "Freakonomics";
-        price[4] = 25.95;
-
-        books[4]= "Sacred Hoops";
-        price[4] = 34.95;
-
-        books[5]= "Shantaram";
-        price[5] = 22.75;
-
-        books[6]= "The Fist Of God";
-        price[6] = 20.65;
-
-        books[7]= "The Godfather";
-        price[7] = 25.95;
-
-        books[8]= "The Lost City Of Z";
-        price[8] = 26.50;
-
-        books[9]= "The Tourist";
-        price[9] = 16.95;
-
-        log.setAdditivity(true);
 		if (Math.random() <= 0.05) {
-           // log.setAdditivity(true);
-            log.error("Unable to add item to cart. Number of items in the inventory: 0, Item: Unbreakable, price: 36.95");
-          //  log.setAdditivity(false);
-
+			log.info("Number of items in inventory : 0, item is A Clockwork Orange");
+            log.error("Unable to add item to cart");
         } else {
-          //  log.setAdditivity(true);
 			Integer itemCount = (int) Math.ceil(Math.random() * 100);
-            Integer i = (int) Math.floor(Math.random() * 10);
-        	log.info("Number of items in the inventory: " + itemCount + ", Item: " + books[i] + ", price: " + price [i]);
-            //log.setAdditivity(false);
+        	log.info("Number of items in inventory : " + itemCount);
 		}		
 
         User user = (User) ActionContext.getContext().getSession()

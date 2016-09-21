@@ -76,19 +76,19 @@ CREATE TABLE `item` (
 
 /*!40000 ALTER TABLE `item` DISABLE KEYS */;
 LOCK TABLES `item` WRITE;
-INSERT INTO `item` (id,title,imagePath,price) VALUES (1,'A Clockwork Orange','images/A_Clockwork_Orange-Anthony_Burgess.jpg', '35.95'),
-(2,'The Goldfinch: A Novel','images/goldfinch.jpg', '36.75'),
+INSERT INTO `item` (id,title,imagePath,price) VALUES (1,'A Clockwork Orange','images/A_Clockwork_Orange-Anthony_Burgess.jpg', '5.95'),
+(2,'The Goldfinch: A Novel','images/goldfinch.jpg', '16.75'),
 (3,'Personal','images/personal.jpg', '16.95'),
-(4,'Farewell To Arms','images/Farewell_To_Arms-Ernest_Hemingway.jpg', '30.95'),
-(5,'Freakonomics','images/Freakonomics-Stephen_Levitt.jpg', '25.95'),
-(6,'Driven From Within','images/Jordan-Driven_From_Within.jpg', '20.25'),
-(7,'Sacred Hoops','images/Sacred_Hoops-Phil_Jackson.jpg', '34.95'),
-(8,'Shantaram','images/Shantaram-Gregory_David_Roberts.jpg' , '22.75'),
-(9,'The Fist Of God','images/The_Fist_Of_God-Forsyth.jpg', '20.65'),
-(10,'The Godfather','images/The_Godfather-Mario_Puzo.jpg', '25.95'),
-(11,'The Lost City Of Z','images/The_Lost_City_Of_Z-David_Grann.jpg' , '26.50'),
-(12,'The Tourist','images/The_Tourist-Olen_Steinhauer.jpg', '16.95'),
-(13, 'Unbroken','images/unbroken.jpg','36.95');
+(4,'Farewell To Arms','images/Farewell_To_Arms-Ernest_Hemingway.jpg', '10.95'),
+(5,'Freakonomics','images/Freakonomics-Stephen_Levitt.jpg', '5.95'),
+(6,'Driven From Within','images/Jordan-Driven_From_Within.jpg', '10.25'),
+(7,'Sacred Hoops','images/Sacred_Hoops-Phil_Jackson.jpg', '14.95'),
+(8,'Shantaram','images/Shantaram-Gregory_David_Roberts.jpg' , '12.75'),
+(9,'The Fist Of God','images/The_Fist_Of_God-Forsyth.jpg', '10.65'),
+(10,'The Godfather','images/The_Godfather-Mario_Puzo.jpg', '5.95'),
+(11,'The Lost City Of Z','images/The_Lost_City_Of_Z-David_Grann.jpg' , '5.50'),
+(12,'The Tourist','images/The_Tourist-Olen_Steinhauer.jpg', '6.95'),
+(13, 'Unbroken','images/unbroken.jpg','26.95');
 UNLOCK TABLES;
 /*!40000 ALTER TABLE `item` ENABLE KEYS */;
 
