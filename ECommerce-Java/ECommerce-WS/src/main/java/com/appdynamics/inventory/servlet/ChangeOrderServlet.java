@@ -58,15 +58,16 @@ public class ChangeOrderServlet extends HttpServlet {
             trigger1 = "responsetime:2";
             trigger2 = "responsetime:1";
         }
+        AvailableInventory ai = new AvailableInventory();
 
-        ThirdPartyInventoryCheck tp1 = new ThirdPartyInventoryCheck("MainSupplierInventoryCheck", "api.mainsupplier.com", trigger1);
+        ThirdPartyInventoryCheck tp1 = new ThirdPartyInventoryCheck("MainSupplierInventoryCheck", "api.mainsupplier.com", trigger1, ai);
         tp1.start();
         QueryExecutor oracleItems = (QueryExecutor) SpringContext.getBean("queryExecutor");
         OrderManager om = new OrderManager();
         om.setDbConn(oracleItems);
         om.updateOrder();
 
-        ThirdPartyInventoryCheck tp2 = new ThirdPartyInventoryCheck("SecondarySupplierInventoryCheck", "api.secondarysupplier.com", trigger2);
+        ThirdPartyInventoryCheck tp2 = new ThirdPartyInventoryCheck("SecondarySupplierInventoryCheck", "api.secondarysupplier.com", trigger2, ai);
         tp2.start();
         oracleItems.executeOrderUpdateQuery();
         om.updateOrder();
@@ -92,9 +93,9 @@ class ThirdPartyInventoryCheck extends Thread {
     private String hostname;
     private String trigger;
 
-    ThirdPartyInventoryCheck(String name, String hostname, String trigger) {
+    ThirdPartyInventoryCheck(String name, String hostname, String trigger, AvailableInventory ai) {
         super(name);
-        this.ai = AvailableInventory.getInstance();
+        this.ai = ai;
         this.hostname = hostname;
         this.trigger = trigger;
     }
