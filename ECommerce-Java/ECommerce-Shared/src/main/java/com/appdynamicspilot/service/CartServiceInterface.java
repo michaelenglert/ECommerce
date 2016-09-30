@@ -49,7 +49,7 @@ public interface CartServiceInterface {
     void deleteCart(Cart cart);
 
     //Not used in rest
-    void deleteCartItems(Long userId);
+    Cart deleteCartItems(Cart c);
 
     //Can be removed in v2 as the session has been removed.
     List<Item> getAllCartItems(Long cartId);

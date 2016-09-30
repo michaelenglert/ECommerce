@@ -21,7 +21,9 @@ import java.io.Serializable;
 import org.apache.log4j.Logger;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.inject.Inject;
 import javax.persistence.*;
+import javax.validation.ConstraintViolationException;
 
 
 /**
@@ -34,6 +36,7 @@ public class BasePersistenceImpl {
 
     private EntityManagerFactory emf = null;
 
+    @PersistenceContext
     private EntityManager em = null;
 
     private static final int DEFAULT_INTERNAL = 15;
@@ -53,20 +56,16 @@ public class BasePersistenceImpl {
 	 * @throws PersistenceException
 	 */
     @Transactional
-    public void update(final Serializable object) {
+    public Exception update(final Serializable object) {
         EntityManager entityManager = getEntityManager();
-        EntityTransaction txn = entityManager.getTransaction();
-        txn.begin();
+        Exception exception = null;
         try {
             entityManager.merge(object);
         } catch (Exception ex) {
+            exception = ex;
             logger.error(ex);
-            txn.rollback();
-        } finally {
-            if (!txn.getRollbackOnly()) {
-                txn.commit();
-            }
         }
+        return exception;
     }
 
 
@@ -80,7 +79,10 @@ public class BasePersistenceImpl {
 
 
     public EntityManager getEntityManager() {
-           return EntityManagerHelper.getInstance().getEntityManager();
+        if (em != null) {
+            return em;
+        }
+        return null;
     }
 
     public void setEntityManager(EntityManager em) {
@@ -88,37 +90,25 @@ public class BasePersistenceImpl {
     }
 
     @Transactional
-	public void save(final Serializable object) {
+	public Exception save(final Serializable object) {
+        Exception exception = null;
         EntityManager entityManager = getEntityManager();
-        EntityTransaction txn = entityManager.getTransaction();
-        txn.begin();
         try {
             entityManager.persist(object);
         } catch (Exception ex) {
+            exception = ex;
             logger.error(ex);
-            txn.rollback();
-        } finally {
-            if (!txn.getRollbackOnly()) {
-                txn.commit();
-            }
         }
-
+          return exception;
 	}
 
     @Transactional
     public void delete(Serializable object){
         EntityManager entityManager = getEntityManager();
-        EntityTransaction txn = entityManager.getTransaction();
-        txn.begin();
         try {
             entityManager.remove(object);
         } catch (Exception ex) {
             logger.error(ex);
-            txn.rollback();
-        } finally {
-            if (!txn.getRollbackOnly()) {
-                txn.commit();
-            }
         }
 	}
 

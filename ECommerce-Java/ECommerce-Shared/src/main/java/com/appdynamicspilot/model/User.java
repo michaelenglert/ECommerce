@@ -26,9 +26,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "user")
 public class User implements java.io.Serializable {
-    public enum CUSTOMER_TYPE {DIAMOND, PLATINUM, GOLD, SILVER, BRONZE}
-
-    ;
+    public enum CUSTOMER_TYPE {DIAMOND, PLATINUM, GOLD, SILVER, BRONZE};
     private static Logger log = Logger.getLogger(User.class.getName());
     private static final long serialVersionUID = 1L;
     private Long id = null;
@@ -36,7 +34,11 @@ public class User implements java.io.Serializable {
     private String password = null;
     private String customerName = null;
     private CUSTOMER_TYPE customerType = null;
-    private String cityName = null;
+    private Address address = null;
+
+    public User() {
+        setAddress(new Address());
+    }
 
     /**
      * Getter and Setter of customerName
@@ -100,16 +102,13 @@ public class User implements java.io.Serializable {
         this.customerType = customerType;
     }
 
-    /**
-     * Getter and Setter of CityName
-     */
-    @Column(name = "city_name")
-    public String getCityName() {
-        return cityName;
+    @Embedded
+    public Address getAddress() {
+        return address;
     }
 
-    public void setCityName(String cityName) {
-        this.cityName = cityName;
+    public void setAddress(Address address) {
+        this.address = address;
     }
 }
 

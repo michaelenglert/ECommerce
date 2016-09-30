@@ -5,6 +5,9 @@ sourceCompatibility=1.7
 
 repositories {
 	mavenCentral()
+    maven {
+        url "http://repository.primefaces.org/"
+    }
 }
 
 dependencies {
@@ -13,8 +16,8 @@ dependencies {
 
     providedCompile 'javax.jms:jms-api:1.1-rev-1';
     providedCompile 'com.sun.mail:javax.mail:1.5.2';
-    providedCompile 'javax.servlet:javax.servlet-api:3.1.0';
-    providedCompile 'javax.servlet:servlet-api:2.5';
+
+    providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.1.0'
 
     compile 'org.apache.struts:struts2-core:2.3.16.3';
     compile 'org.apache.struts:struts2-spring-plugin:2.3.16.3';
@@ -28,6 +31,7 @@ dependencies {
     compile 'javax.servlet:jstl:1.2';
     compile 'javax.xml.ws:jaxws-api:2.2.11';
     compile 'commons-dbcp:commons-dbcp:1.4';
+    compile group: 'commons-validator', name: 'commons-validator', version: '1.4.0'
 
     compile 'org.apache.activemq:activemq-all:5.5.1'
     compile 'org.apache.activemq:activemq-pool:5.5.1';
@@ -46,6 +50,16 @@ dependencies {
     compile 'org.springframework:spring-tx:3.2.11.RELEASE';
     compile 'org.springframework:spring-webmvc:3.2.11.RELEASE';
 
+    compile 'com.sun.faces:jsf-impl:2.2.13';
+    compile 'com.sun.faces:jsf-api:2.2.13';
+    compile 'org.primefaces:primefaces:6.0';
+    compile 'org.primefaces.themes:midnight:1.0.10';
+    compile 'javax.inject:javax.inject:1';
+    compile 'javax.annotation:jsr250-api:1.0';
+    compile 'javax.enterprise:cdi-api:1.0-SP1';
+    compile 'javax.el:javax.el-api:3.0.0';
+
+
     compile 'org.eclipse.persistence:org.eclipse.persistence.jpa:2.5.2';
 
     compile 'org.codehaus.castor:castor:1.3.3';
@@ -54,6 +68,8 @@ dependencies {
     compile 'org.apache.axis2:axis2-codegen:1.4.1';
     compile 'org.apache.axis:axis-jaxrpc:1.4';
     compile 'org.apache.axis:axis:1.4';
+
+
 
 
     //Added Gson for parsing json

@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+
+<h:head>
+    <script type="text/javascript">
+//<![CDATA[
+  window["adrum-app-key"] = "AD-AAB-AUP";
+  window['adrum-start-time'] = new Date().getTime();
+  (function(config){(function(xd){xd.enable=true;})(config.xd||(config.xd={}));})(window['adrum-config']||(window['adrum-config']={}));
+
+//]]>
+</script>
+<h:outputScript library="js" name="/adrum.js"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title><ui:insert name="title">ShopDynamics</ui:insert></title>
+</h:head>
+
+
+
+
+
+<h:body>
+    <div id="top">
+        <ui:insert name="top">
+            <h:form id="menuForm">
+                <p:messages id="messages"/>
+
+                    <p:menubar model="#{menuBean.model}" >
+                        <f:facet name="options">
+                            <p:button id="cartButton" type="button" outcome="cart.xhtml" value="#{shoppingCartController.cartStatus}" icon="ui-icon-extlink" />
+                        <ui:fragment rendered="#{registrationController.isLoggedIn eq true}">
+                            <p:commandButton id="logoutButton" action="#{registrationController.logout()}" value="Logout" ajax="false"/>
+                        </ui:fragment>
+                            <ui:fragment rendered="#{registrationController.isLoggedIn eq false}">
+                                <p:button id="loginButton" type="button" outcome="login.xhtml" value="Login or Register" icon="ui-icon-extlink" />
+                            </ui:fragment>
+                        </f:facet>
+                    </p:menubar>
+            </h:form>
+        </ui:insert>
+    </div>
+
+    <div id="content" class="center_content">
+        <ui:insert name="content">Content</ui:insert>
+    </div>
+
+    <h:outputText rendered="#{AppDynamics_JS_FOOTER != null}" value='#{request.getAttribute("AppDynamics_JS_FOOTER")}' escape="false"/>
+</h:body>
+</html>

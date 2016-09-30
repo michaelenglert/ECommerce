@@ -16,6 +16,8 @@
 
 package com.appdynamicspilot.jms;
 
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Named;
 import javax.jms.JMSException;
 import javax.jms.MapMessage;
 import javax.jms.Message;
@@ -30,6 +32,9 @@ import org.springframework.jms.core.support.JmsGatewaySupport;
  *
  * @author Vikash
  */
+
+@Named
+@ApplicationScoped
 public class MessageProducer extends JmsGatewaySupport {
 
     protected final static String CMD_MAIL = "SEND_MAIL";

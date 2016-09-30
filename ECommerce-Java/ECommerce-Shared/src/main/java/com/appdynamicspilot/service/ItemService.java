@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.appdynamicspilot.service;
 
 import java.util.List;
@@ -23,7 +22,13 @@ import org.apache.log4j.Logger;
 import com.appdynamicspilot.model.Item;
 import com.appdynamicspilot.persistence.ItemPersistence;
 
+import javax.inject.Inject;
+import javax.inject.Named;
 
+import javax.enterprise.context.ApplicationScoped;
+
+@Named
+@ApplicationScoped
 public class ItemService {
 	/**
 	 * Logger Class
@@ -33,6 +38,7 @@ public class ItemService {
 	/**
 	 * Ref to ItemPersistence class
 	 */
+	@Inject
 	private ItemPersistence itemPersistence;
 	public void setItemPersistence(ItemPersistence itemPersistence) {
 		this.itemPersistence = itemPersistence;
@@ -60,5 +66,16 @@ public class ItemService {
 		return this.itemPersistence.getItemByName(name);
 	}
 
+	public List<Item> getItemByType(Item.ItemType type) {
+		return itemPersistence.getItemByType(type);
+	}
+
+	public List<Item> getItemByCategory(Item.ItemType type, String category) {
+		return itemPersistence.getItemByCategory(type, category);
+	}
+
+	public List<String> getCategoriesByType(Item.ItemType type) {
+		return itemPersistence.getCategoriesByType(type);
+	}
 
 }

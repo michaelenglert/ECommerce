@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
+
+
+<ui:composition template="checkout_template.xhtml">
+    <ui:define name="checkout_content">
+        <p:messages/>
+        <h:form id="cc">
+            <p:panel columns="2" id="matchGrid" cellpadding="5" header="Enter Credit Card Details">
+                <p:messages id="messages" showDetail="true" autoUpdate="true" />
+                <h:panelGrid columns="2">
+                    <h:outputLabel for="cc_num" value="Credit Card Number" />
+                    <p:inputText id="cc_num" value="#{shoppingCartController.order.ccNumber}" required="true" />
+
+                    <h:outputLabel for="cc_type" value="Credit Card Type" />
+                    <p:selectOneMenu id="cc_type" value="#{shoppingCartController.order.ccType}" editable="false" required="true">
+                        <f:selectItems value="#{shoppingCartController.order.creditCardTypes}" />
+                    </p:selectOneMenu>
+                </h:panelGrid>
+            </p:panel>
+
+            <p:commandButton id="creditCartVerifyButton" action="#{shoppingCartController.verifyCreditCard()}" update="matchGrid" value="Continue Checkout" ajax="false" />
+        </h:form>
+    </ui:define>
+
+</ui:composition>
+</html>

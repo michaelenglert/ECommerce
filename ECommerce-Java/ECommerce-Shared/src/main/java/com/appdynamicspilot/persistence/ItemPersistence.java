@@ -13,8 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.appdynamicspilot.persistence;
+
+import javax.inject.Named;
+import javax.enterprise.context.ApplicationScoped;
+
 
 import java.lang.Math;
 import java.util.List;
@@ -29,6 +32,8 @@ import com.appdynamicspilot.util.SpringContext;
 
 import javax.persistence.*;
 
+@Named
+@ApplicationScoped
 public class ItemPersistence extends BasePersistenceImpl {
     /**
      * Logger for this class
@@ -78,6 +83,25 @@ public class ItemPersistence extends BasePersistenceImpl {
         q.setParameter("title", name);
         List<Item> itemList = (List<Item>) q.getResultList();
         return (ArgumentUtils.isNullOrEmpty(itemList) ? null : itemList.get(0));
+    }
+
+    public List<Item> getItemByType(Item.ItemType type) {
+        Query q = getEntityManager().createQuery("SELECT i from Item WHERE i.type :=:type");
+        q.setParameter("type", type);
+        return (List<Item>) q.getResultList();
+    }
+
+    public List<Item> getItemByCategory(Item.ItemType type, String category) {
+        Query q = getEntityManager().createQuery("SELECT i from Item i WHERE i.type = :type and i.category = :category");
+        q.setParameter("type", type);
+        q.setParameter("category", category);
+        return (List<Item>) q.getResultList();
+    }
+
+    public List<String> getCategoriesByType(Item.ItemType type) {
+        Query q = getEntityManager().createNativeQuery("SELECT distinct(category) from item where itemtype = ?");
+        q.setParameter(1, type.toString().toUpperCase());
+        return (List<String>) q.getResultList();
     }
 
 }

@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns="http://www.w3.org/1999/xhtml">
+
+<body>
+<ui:define name="title">ShopDynamics Items List</ui:define>
+
+<ui:composition template="template.xhtml">
+    <ui:define name="content">
+        <h:form id="form">
+            <center>
+                <p:panelGrid columns="1" layout="grid">
+
+
+                    <p:carousel value="#{itemListView.items}" headerText="Top Sellers"
+                                style="width:400px;margin-bottom: 100px;" var="item" itemStyle="text-align:center" responsive="true">
+                        <h:panelGrid columns="1" style="width:100%" columnClasses="label,value">
+                            <f:facet name="header">
+                                <img src="#{item.imagePath}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.category}"/>
+
+                            <h:outputText value="$#{item.price}"/>
+
+
+                            <f:facet name="footer">
+                                <p:commandButton update=":form:itemDetails" oncomplete="PF('itemDialog').show()"
+                                                 icon="ui-icon-search" alt="#{item.id}">
+                                    <f:setPropertyActionListener value="#{item}" target="#{itemListView.selectedItem}"/>
+                                </p:commandButton>
+                            </f:facet>
+                        </h:panelGrid>
+
+                    </p:carousel>
+
+
+
+                    <p:dataGrid var="item" value="#{itemListView.items}" columns="3" layout="grid"
+                                rows="6" paginator="true" id="items"
+                                paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                                rowsPerPageTemplate="5,10,20">
+
+                        <f:facet name="header">
+                            Items for Sale
+                        </f:facet>
+
+                        <p:panel header="#{item.title}" style="text-align:center">
+                            <h:panelGrid columns="1" style="width:100%">
+                                <img src="#{item.imagePath}"/>
+                                <h:outputText value="#{item.category}"/>
+                                <h:outputText value="#{item.price}">
+                                    <f:convertNumber currencyCode="USD" type="currency"/>
+                                </h:outputText>
+                                <p:commandLink update=":form:itemDetails" oncomplete="PF('itemDialog').show()"
+                                               title="#{item.title}">
+                                    <h:outputText styleClass="ui-icon ui-icon-search" style="margin:0 auto;"
+                                                  value="Details"/>
+                                    <f:setPropertyActionListener value="#{item}" target="#{itemListView.selectedItem}"/>
+                                </p:commandLink>
+                            </h:panelGrid>
+                        </p:panel>
+
+                    </p:dataGrid>
+                </p:panelGrid>
+                <p:dialog header="Item Info" widgetVar="itemDialog" modal="true" showEffect="fade" hideEffect="fade"
+                          resizable="false">
+                    <p:outputPanel id="itemDetails" style="text-align:center;">
+                        <p:panelGrid columns="2" rendered="#{not empty itemListView.selectedItem}"
+                                     columnClasses="label,value">
+                            <f:facet name="header">
+                                <img src="#{item.imagePath}"/>
+                            </f:facet>
+
+                            <h:outputText value="Id:"/>
+                            <h:outputText value="#{itemListView.selectedItem.id}"/>
+
+                            <h:outputText value=""/>
+                            <img src="#{itemListView.selectedItem.imagePath}"/>
+
+                            <h:outputText value="Description"/>
+                            <h:outputText value="#{itemListView.selectedItem.description}"/>
+
+                            <h:outputText value="Category:"/>
+                            <h:outputText value="#{itemListView.selectedItem.category}"/>
+
+                            <h:outputText value="Price"/>
+                            <h:outputText value="$#{itemListView.selectedItem.price}"/>
+
+
+                            <p:commandButton id="buyNowButton" type="submit" value="Buy Now" icon="ui-icon-extlink"
+                                             action="#{shoppingCartController.buyNow}">
+                                <f:param name="itemId" value="#{itemListView.selectedItem.id}"/>
+                            </p:commandButton>
+                            <p:commandButton id="addToCartButton" type="submit" value="Add To Cart" update=":menuForm:cartButton" icon="ui-icon-extlink"
+                                             action="#{shoppingCartController.addToCart}"
+                                             oncomplete="PF('itemDialog').hide();">
+                                <f:param name="itemId" value="#{itemListView.selectedItem.id}"/>
+                            </p:commandButton>
+                        </p:panelGrid>
+                    </p:outputPanel>
+                </p:dialog>
+            </center>
+        </h:form>
+    </ui:define>
+</ui:composition>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"  xmlns:p="http://primefaces.org/ui" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
+
+<body>
+<ui:composition template="template.xhtml">
+    <ui:define name="content">
+        <h:form id="form">
+            <p:dialog header="Item Info" widgetVar="itemDialog" modal="true" showEffect="blind" hideEffect="explode" resizable="false">
+                <p:outputPanel id="itemDetail" style="text-align:center;">
+                    <p:panelGrid  columns="2" rendered="#{not empty itemListView.selectedItem}" columnClasses="label,value">
+                        <f:facet name="header">
+                            <img src="#{item.imagePath}"/>
+                        </f:facet>
+
+                        <h:outputText value="Id:" />
+                        <h:outputText value="#{itemListView.selectedItem.id}" />
+
+                        <h:outputText value="Year" />
+                        <h:outputText value="#{itemListView.selectedItem.title}" />
+
+                        <h:outputText value="Color:" />
+                        <h:outputText value="#{itemListView.selectedItem.description}"/>
+
+                        <h:outputText value="Price" />
+                        <h:outputText value="#{itemListView.selectedItem.price}" />
+                    </p:panelGrid>
+                </p:outputPanel>
+            </p:dialog>
+            <p:repeat id="itemList" value="#{shoppingCartController.cart.items}" var="item">
+                <p:panelGrid columns="2" style="width:100%" columnClasses="logo,detail">
+                    <p:commandLink update=":form:itemDetail" oncomplete="PF('itemDialog').show()">
+                        <f:setPropertyActionListener value="#{item}" target="#{itemListView.selectedItem}" />
+                        <img src="#{item.imagePath}"/>
+                    </p:commandLink>
+
+                    <p:outputPanel>
+                        <h:panelGrid columns="2" cellpadding="5">
+                            <h:outputText value="Id:" />
+                            <h:outputText value="#{item.id}" style="font-weight: bold"/>
+
+                            <h:outputText value="Title:" />
+                            <h:outputText value="#{item.title}" style="font-weight: bold"/>
+
+
+                            <h:outputText value="Price:" />
+                            <h:outputText value="#{item.price}" style="font-weight: bold"/>
+                            <p:commandButton value="Remove From Cart" update="@all" action="#{shoppingCartController.removeItem(item)}" onclick="submit();"/>
+                        </h:panelGrid>
+                    </p:outputPanel>
+                </p:panelGrid>
+                <p:separator />
+            </p:repeat>
+        </h:form>
+        <div id="checkout_content" class="center_content">
+            <ui:insert name="checkout_content">Content</ui:insert>
+        </div>
+
+
+    </ui:define>
+</ui:composition>
+</body>
+</html>

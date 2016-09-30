@@ -183,8 +183,8 @@ public class CartAction extends ActionSupport implements Preparable,
         if (ArgumentUtils.isNull(user)) {
             return "LOGOUT";
         }
-
-        cartService.deleteCartItems(user.getId());
+        Cart cart = (Cart) getServletRequest().getSession().getAttribute("CART");
+        cartService.deleteCartItems(cart);
         if ("".equals(xml))
             return "FAILURE";
         CastorUtil cu = new CastorUtil();

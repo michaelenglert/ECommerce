@@ -22,6 +22,8 @@ import com.appdynamicspilot.util.SpringContext;
 import org.apache.log4j.Logger;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -29,6 +31,8 @@ import javax.persistence.Query;
 import java.util.Collections;
 import java.util.List;
 
+@Named
+@ApplicationScoped
 public class CartPersistence extends BasePersistenceImpl {
     /**
      * Logger for this class
@@ -64,6 +68,7 @@ public class CartPersistence extends BasePersistenceImpl {
      * @param userId
      * @return List of items
      */
+    @Transactional
     public List<Item> getAllItemsByUser(Long userId) {
         Query q = getEntityManager().createQuery("SELECT c FROM Cart c where c.user.id = :userid");
         q.setParameter("userid", userId);
@@ -82,6 +87,7 @@ public class CartPersistence extends BasePersistenceImpl {
      * @param userId
      * @return cart object
      */
+    @Transactional
     public Cart getCartByUser(Long userId) {
         Query q = getEntityManager().createQuery("SELECT c FROM Cart c where c.user.id = :userid");
         q.setParameter("userid", userId);
@@ -98,6 +104,7 @@ public class CartPersistence extends BasePersistenceImpl {
      * @param username
      * @param item     id
      */
+    @Transactional
     public void deleteItemInCart(String username, Long id) {
         Query q = getEntityManager().createQuery("SELECT c FROM Cart c where c.user.email = :userid");
         q.setParameter("userid", username);
@@ -105,6 +112,16 @@ public class CartPersistence extends BasePersistenceImpl {
         Item i = getEntityManager().find(Item.class, id);
         c.removeItem(i);
         update(c);
+    }
+
+    @Transactional
+    public Exception deleteItemInCart(Long cartId, Long itemId) {
+        Query q = getEntityManager().createQuery("SELECT c FROM Cart c where c.id = :cartId");
+        q.setParameter("cartId", cartId);
+        Cart c = (Cart) q.getSingleResult();
+        Item i = getEntityManager().find(Item.class, itemId);
+        c.removeItem(i);
+        return update(c);
     }
 
     /**
@@ -128,17 +145,18 @@ public class CartPersistence extends BasePersistenceImpl {
 
     //Not used in rest
     @Transactional
-    public void deleteAllCartItems(Long userId) {
+    public Cart deleteAllCartItems(Cart cart) {
         EntityManager em = getEntityManager();
         EntityTransaction txn = em.getTransaction();
+        cart.setItems(Collections.EMPTY_LIST);
         txn.begin();
-        Query q = em.createQuery("DELETE FROM Cart c where c.user.id=:id");
-        q.setParameter("id", userId);
-        q.executeUpdate();
+        Cart c = em.merge(cart);
         txn.commit();
+        return c;
     }
 
     //Not used in rest
+    @Transactional
     public void deleteCart(Cart cart) {
         if (getEntityManager() == null) {
             setEntityManager(findEntityManger());

@@ -60,12 +60,14 @@ public class ItemAction extends ActionSupport implements Preparable, ServletRequ
         log.info("Calling cartService");
         log.info("Inside the item action class");
         User user = (User) ActionContext.getContext().getSession().get("USER");
-
+        Cart cart = (Cart) ActionContext.getContext().getSession().get("CART");
         if (ArgumentUtils.isNull(user))
             return "LOGOUT";
 
         //Deleting all the items in the user cart with UserID passed into the method.
-        cartService.deleteCartItems(user.getId());
+        if (cart != null) {
+            cartService.deleteCartItems(cart);
+        }
 
         //Getting all the items from the inventory.
         itemsList = itemService.getAllItems();

@@ -52,4 +52,5 @@ public class UserPersistence extends BasePersistenceImpl {
         List<User> memberList = (List<User>) q.getResultList();
         return (ArgumentUtils.isNullOrEmpty(memberList) ? null : memberList);
     }
+
 }

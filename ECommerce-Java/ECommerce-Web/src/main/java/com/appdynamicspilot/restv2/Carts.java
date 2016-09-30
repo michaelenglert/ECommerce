@@ -218,6 +218,7 @@ public class Carts {
     @Produces(MediaType.TEXT_PLAIN)
     public String checkout(@Context HttpServletRequest req) throws Exception {
         User user = (User) req.getSession(true).getAttribute("USER");
+        Cart cart = (Cart) req.getSession(true).getAttribute("CART");
         String username = req.getHeader("USERNAME");
         if (user == null) {
             if (username == null) {
@@ -226,7 +227,7 @@ public class Carts {
                 user = getUserService().getMemberByLoginName(username);
             }
         }
-        Cart cart = getCartService().getCartByUser(user.getId());
+
         if (cart == null) {
             return "Nothing In cart to checkout.";
         }
@@ -252,7 +253,8 @@ public class Carts {
                 getMessageProducer().sendMessageWithOrderId(orderIds, user.getEmail());
                 getMessageProducer().sendTextMessageWithOrderId();
                 //Removing items from cart, if success
-                getCartService().deleteCartItems(user.getId());
+                cart = getCartService().deleteCartItems(cart);
+                req.getSession(true).setAttribute("CART",cart);
                 log.info("Total amount is $" + cart.getCartTotal() + " Order ID(s) for your order(s) : " + orderIds);
                 return "Total amount is $" + cart.getCartTotal() + " Order ID(s) for your order(s) : " + orderIds;
             } else {

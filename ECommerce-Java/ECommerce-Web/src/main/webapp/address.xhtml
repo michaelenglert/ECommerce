@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"  xmlns:p="http://primefaces.org/ui" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
+
+<body>
+<ui:composition template="checkout_template.xhtml">
+    <ui:define name="checkout_content">
+        <h:form id="address">
+            <p:panel columns="2" id="matchGrid" cellpadding="5" header="Shipping Address">
+                <p:messages/>
+                <h:panelGrid columns="2">
+
+                    <h:outputLabel for="street1" value="Street1" />
+                    <p:inputText id="street1" value="#{shoppingCartController.order.address.street1}" required="true" validatorMessage="You must specify a street." />
+
+                    <h:outputLabel for="street2" value="Street2" />
+                    <p:inputText id="street2" value="#{shoppingCartController.order.address.street2}" required="false" />
+
+                    <h:outputLabel for="city" value="City" />
+                    <p:inputText id="city" value="#{shoppingCartController.order.address.city}"  required="true" validatorMessage="You must specify a city." />
+
+                    <h:outputLabel for="state" value="State" />
+                    <p:selectOneMenu id="state" value="#{shoppingCartController.order.address.state}" filter="true" filterMatchMode="startsWith">
+                        <f:selectItems value="#{countryView.states}" />
+                    </p:selectOneMenu>
+
+                    <h:outputLabel for="country" value="Country" />
+                    <p:selectOneMenu id="country" value="#{shoppingCartController.order.address.country}">
+                        <f:ajax event="change" execute="state" render="@all" listener="#{countryView.changedCountry}"/>
+                        <f:selectItems value="#{countryView.countries}"  />
+                    </p:selectOneMenu>
+
+                    <h:outputLabel for="zip" value="Zip" />
+                    <p:inputText id="zip" value="#{shoppingCartController.order.address.zip}" required="true" validatorMessage="You must specify a zip." />
+
+                </h:panelGrid>
+            </p:panel>
+
+            <p:commandButton id="addressButton" action="#{shoppingCartController.verifyAddress()}" value="Continue Checkout" onclick="submit();" ajax="false"/>
+        </h:form>
+    </ui:define>
+</ui:composition>
+</body>
+</html>

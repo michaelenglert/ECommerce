@@ -22,11 +22,22 @@ import com.appdynamicspilot.model.User;
 import com.appdynamicspilot.persistence.UserPersistence;
 import com.appdynamicspilot.util.MD5;
 
+import javax.enterprise.context.ApplicationScoped;
+import javax.validation.ConstraintViolationException;
+
+
+import javax.inject.Inject;
+import javax.inject.Named;
 import java.util.List;
 
+import org.springframework.transaction.annotation.Transactional;
 
+@Named
+@ApplicationScoped
+@Transactional
 public class UserService {
 	private static final Logger log = Logger.getLogger(UserService.class);
+	@Inject
 	private UserPersistence userPersistence;
 
 	public boolean validateMember(String email,String password){
@@ -48,6 +59,20 @@ public class UserService {
 	public List<User> getAllUser() {
 		return userPersistence.getAllUser();
 	}
+
+	public void updateProfile (User user) {
+		getUserPersistence();
+	}
+
+	public boolean doesUsernameExist(String username) {
+		User user = getMemberByLoginName(username);
+		return (user != null);
+	}
+
+	public Exception register (User user) {
+		return getUserPersistence().save(user);
+	}
+
 
 	public void setUserPersistence(UserPersistence userPersistence) {
 		this.userPersistence = userPersistence;

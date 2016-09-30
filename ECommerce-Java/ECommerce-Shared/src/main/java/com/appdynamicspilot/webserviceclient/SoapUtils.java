@@ -45,9 +45,7 @@ public class SoapUtils {
 		orderRequest.setItemId(itemId);
 		orderRequest.setQuantity(quanity);
 		try {
-
-			URL url = new URL("http://ws:8080/cart/orderService?wsdl");
-
+			URL url = new URL(getAxisUrl());
 			QName qname = new QName("http://inventory.appdynamics.com/", "OrderServiceImplService");
 
 			Service service = Service.create(url, qname);
@@ -104,8 +102,7 @@ public class SoapUtils {
 		orderRequest.setQuantity(1);
 		try {
 
-			URL url = new URL("http://ws:8080/cart/orderService?wsdl");
-
+			URL url = new URL(getAxisUrl());
 			QName qname = new QName("http://inventory.appdynamics.com/", "OrderServiceImplService");
 
 			Service service = Service.create(url, qname);

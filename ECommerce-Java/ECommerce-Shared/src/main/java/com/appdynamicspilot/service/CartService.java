@@ -26,7 +26,9 @@ import com.appdynamicspilot.persistence.CartPersistence;
 import com.appdynamicspilot.persistence.ItemPersistence;
 import com.appdynamicspilot.webserviceclient.SoapUtils;
 
+import org.springframework.transaction.annotation.Transactional;
 
+@Transactional
 public class CartService implements CartServiceInterface {
     /**
      * Logger for CartService class
@@ -110,6 +112,9 @@ public class CartService implements CartServiceInterface {
     public void deleteItemInCart(String username, Long id) {
         cartPersistence.deleteItemInCart(username, id);
     }
+    public void deleteItemInCart(Long cartId, Long itemId) {
+        cartPersistence.deleteItemInCart(cartId,itemId);
+    }
 
     /**
      * Deletes Items from cart v2
@@ -161,8 +166,8 @@ public class CartService implements CartServiceInterface {
     }
 
     //Not used in rest
-    public void deleteCartItems(Long userId) {
-        cartPersistence.deleteAllCartItems(userId);
+    public Cart deleteCartItems(Cart cart) {
+        return cartPersistence.deleteAllCartItems(cart);
     }
 
     //Not used in rest

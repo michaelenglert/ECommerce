@@ -1,6 +1,7 @@
 package com.appdynamicspilot.action;
 
 import com.appdynamicspilot.jms.FulfillmentProducer;
+import com.appdynamicspilot.model.Address;
 import com.appdynamicspilot.model.FulfillmentOrder;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.Preparable;
@@ -40,7 +41,9 @@ public class OrderAction extends ActionSupport implements Preparable,
 
         User user = new User();
         user.setId(i);
-        user.setCityName("Seattle");
+        Address address = new Address();
+        user.setAddress(address);
+        address.setCity("Seattle");
         user.setCustomerName("Rob");
         user.setCustomerType(User.CUSTOMER_TYPE.PLATINUM);
 

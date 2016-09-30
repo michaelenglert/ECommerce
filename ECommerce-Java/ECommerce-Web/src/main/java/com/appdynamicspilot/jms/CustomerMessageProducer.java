@@ -16,6 +16,8 @@
 
 package com.appdynamicspilot.jms;
 
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Named;
 import javax.jms.JMSException;
 import javax.jms.Message;
 import javax.jms.Session;
@@ -26,6 +28,8 @@ import org.springframework.jms.core.support.JmsGatewaySupport;
 
 import com.appdynamicspilot.model.User;
 
+@Named
+@ApplicationScoped
 public class CustomerMessageProducer extends JmsGatewaySupport {
 
     public void sendCustomerMesssage(final User user) {

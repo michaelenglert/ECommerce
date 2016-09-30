@@ -20,6 +20,8 @@ import com.appdynamicspilot.model.FulfillmentOrder;
 import org.springframework.jms.core.MessageCreator;
 import org.springframework.jms.core.support.JmsGatewaySupport;
 
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Named;
 import javax.jms.*;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
@@ -30,6 +32,8 @@ import java.io.StringWriter;
 /**
  * Created by aleftik on 11/14/14.
  */
+@Named
+@ApplicationScoped
 public class FulfillmentProducer extends JmsGatewaySupport {
 
     public void sendFulfillment(final FulfillmentOrder order) {
