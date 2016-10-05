@@ -6,21 +6,22 @@ import com.appdynamicspilot.service.ItemService;
 
 
 import javax.annotation.ManagedBean;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
-import javax.enterprise.context.RequestScoped;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
 import javax.faces.context.FacesContext;
+import org.springframework.context.annotation.Scope;
 /**
  * Created by aleftik on 8/28/16.
  */
 
 @Named
-@ManagedBean
-@RequestScoped
+@SessionScoped
+@Scope("session")
 public class ItemListView implements Serializable {
     @Inject
     private ItemService itemService = null;

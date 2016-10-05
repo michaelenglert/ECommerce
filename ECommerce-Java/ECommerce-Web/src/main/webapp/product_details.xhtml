@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns="http://www.w3.org/1999/xhtml">
+
+<body>
+<ui:define name="title">ShopDynamics Items List</ui:define>
+
+<ui:composition template="template.xhtml">
+    <ui:define name="content">
+        <p:panel id="itemDetails" style="text-align:center;" header="#{shoppingCartController.selectedItem.title}">
+            <p:panelGrid columns="2" rendered="#{not empty shoppingCartController.selectedItem}"
+                         columnClasses="label,value">
+                <f:facet name="header">
+                    <img src="#{item.imagePath}"/>
+                </f:facet>
+
+                <h:outputText value="Id:"/>
+                <h:outputText value="#{shoppingCartController.selectedItem.id}"/>
+
+                <h:outputText value=""/>
+                <img src="#{shoppingCartController.selectedItem.imagePath}"/>
+
+                <h:outputText value="Description"/>
+                <h:outputText value="#{shoppingCartController.selectedItem.description}"/>
+
+                <h:outputText value="Category:"/>
+                <h:outputText value="#{shoppingCartController.selectedItem.category}"/>
+
+                <h:outputText value="Price"/>
+                <h:outputText value="$#{shoppingCartController.selectedItem.price}"/>
+
+
+                <p:commandButton id="buyNowButton" type="submit" value="Buy Now" icon="ui-icon-extlink"
+                                 action="#{shoppingCartController.buyNow}">
+                    <f:param name="itemId" value="#{shoppingCartController.selectedItem.id}"/>
+                </p:commandButton>
+                <p:commandButton id="addToCartButton" type="submit" value="Add To Cart" update=":menuForm:cartButton" icon="ui-icon-extlink"
+                                 action="#{shoppingCartController.addToCart}">
+                    <f:param name="itemId" value="#{shoppingCartController.selectedItem.id}"/>
+                </p:commandButton>
+            </p:panelGrid>
+        </p:panel>
+    </ui:define>
+</ui:composition>
+</body>
+</html>

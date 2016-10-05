@@ -70,7 +70,8 @@ public class ItemPersistence extends BasePersistenceImpl {
      * @return Item
      */
     public Item getItemByID(Long id) {
-        return getEntityManager().find(Item.class, id);
+        EntityManager em = getEntityManager();
+        return em.find(Item.class, id);
     }
 
     /**

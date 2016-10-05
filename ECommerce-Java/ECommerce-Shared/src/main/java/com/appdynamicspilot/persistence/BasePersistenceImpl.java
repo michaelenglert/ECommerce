@@ -69,7 +69,11 @@ public class BasePersistenceImpl {
     }
 
 
-    public EntityManagerFactory getEntityManagerFactory() {
+    public synchronized EntityManagerFactory getEntityManagerFactory() {
+        if(emf != null) {
+            return this.emf;
+        }
+        setEntityManagerFactory(Persistence.createEntityManagerFactory("pu"));
         return this.emf;
     }
 
@@ -82,7 +86,7 @@ public class BasePersistenceImpl {
         if (em != null) {
             return em;
         }
-        return null;
+        return EntityManagerHelper.getInstance().getEntityManager();
     }
 
     public void setEntityManager(EntityManager em) {

@@ -22,6 +22,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
 import javax.sql.DataSource;
 import javax.annotation.Resource;
 import javax.jms.Queue;
@@ -64,6 +65,10 @@ public class Carts {
     private Queue orderQueue;
 
     private MessageProducer messageProducer;
+    @Inject
+    private CartService cartService;
+    @Inject
+    private UserService userService;
 
     public MessageProducer getMessageProducer() {
         return (MessageProducer) SpringContext.getBean("messageProducer");
@@ -296,11 +301,11 @@ public class Carts {
     }
 
     public CartService getCartService() {
-        return (CartService) SpringContext.getBean("cartService");
+        return cartService;
     }
 
     public UserService getUserService() {
-        return (UserService) SpringContext.getBean("userService");
+        return userService;
     }
 
     private DataSource getOracleDataSource() {

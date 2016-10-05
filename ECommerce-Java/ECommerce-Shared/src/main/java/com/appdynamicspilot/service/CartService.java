@@ -26,9 +26,17 @@ import com.appdynamicspilot.persistence.CartPersistence;
 import com.appdynamicspilot.persistence.ItemPersistence;
 import com.appdynamicspilot.webserviceclient.SoapUtils;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
+import javax.inject.Named;
+
 @Transactional
+@Named
+@ApplicationScoped
+@Scope("singleton")
 public class CartService implements CartServiceInterface {
     /**
      * Logger for CartService class
@@ -38,6 +46,7 @@ public class CartService implements CartServiceInterface {
     /**
      * Ref to CartPersistence class
      */
+    @Inject
     private CartPersistence cartPersistence;
 
     public void setCartPersistence(CartPersistence cartPersistence) {
@@ -47,6 +56,8 @@ public class CartService implements CartServiceInterface {
     /**
      * Ref to ItemPersistence class
      */
+
+    @Inject
     private ItemPersistence itemPersistence;
 
     public ItemPersistence getItemPersistence() {

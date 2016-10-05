@@ -28,10 +28,11 @@
 
 
                             <f:facet name="footer">
-                                <p:commandButton update=":form:itemDetails" oncomplete="PF('itemDialog').show()"
-                                                 icon="ui-icon-search" alt="#{item.id}">
-                                    <f:setPropertyActionListener value="#{item}" target="#{itemListView.selectedItem}"/>
-                                </p:commandButton>
+                                <p:commandLink action="#{shoppingCartController.details}" ajax="false">
+                                    <h:outputText styleClass="ui-icon ui-icon-search" style="margin:0 auto;"
+                                                  value="Details"/>
+                                    <f:setPropertyActionListener value="#{item}" target="#{shoppingCartController.selectedItem}"/>
+                                </p:commandLink>
                             </f:facet>
                         </h:panelGrid>
 
@@ -55,54 +56,16 @@
                                 <h:outputText value="#{item.price}">
                                     <f:convertNumber currencyCode="USD" type="currency"/>
                                 </h:outputText>
-                                <p:commandLink update=":form:itemDetails" oncomplete="PF('itemDialog').show()"
-                                               title="#{item.title}">
+                                <p:commandLink action="#{shoppingCartController.details}" ajax="false">
                                     <h:outputText styleClass="ui-icon ui-icon-search" style="margin:0 auto;"
                                                   value="Details"/>
-                                    <f:setPropertyActionListener value="#{item}" target="#{itemListView.selectedItem}"/>
+                                    <f:setPropertyActionListener value="#{item}" target="#{shoppingCartController.selectedItem}"/>
                                 </p:commandLink>
                             </h:panelGrid>
                         </p:panel>
 
                     </p:dataGrid>
                 </p:panelGrid>
-                <p:dialog header="Item Info" widgetVar="itemDialog" modal="true" showEffect="fade" hideEffect="fade"
-                          resizable="false">
-                    <p:outputPanel id="itemDetails" style="text-align:center;">
-                        <p:panelGrid columns="2" rendered="#{not empty itemListView.selectedItem}"
-                                     columnClasses="label,value">
-                            <f:facet name="header">
-                                <img src="#{item.imagePath}"/>
-                            </f:facet>
-
-                            <h:outputText value="Id:"/>
-                            <h:outputText value="#{itemListView.selectedItem.id}"/>
-
-                            <h:outputText value=""/>
-                            <img src="#{itemListView.selectedItem.imagePath}"/>
-
-                            <h:outputText value="Description"/>
-                            <h:outputText value="#{itemListView.selectedItem.description}"/>
-
-                            <h:outputText value="Category:"/>
-                            <h:outputText value="#{itemListView.selectedItem.category}"/>
-
-                            <h:outputText value="Price"/>
-                            <h:outputText value="$#{itemListView.selectedItem.price}"/>
-
-
-                            <p:commandButton id="buyNowButton" type="submit" value="Buy Now" icon="ui-icon-extlink"
-                                             action="#{shoppingCartController.buyNow}">
-                                <f:param name="itemId" value="#{itemListView.selectedItem.id}"/>
-                            </p:commandButton>
-                            <p:commandButton id="addToCartButton" type="submit" value="Add To Cart" update=":menuForm:cartButton" icon="ui-icon-extlink"
-                                             action="#{shoppingCartController.addToCart}"
-                                             oncomplete="PF('itemDialog').hide();">
-                                <f:param name="itemId" value="#{itemListView.selectedItem.id}"/>
-                            </p:commandButton>
-                        </p:panelGrid>
-                    </p:outputPanel>
-                </p:dialog>
             </center>
         </h:form>
     </ui:define>

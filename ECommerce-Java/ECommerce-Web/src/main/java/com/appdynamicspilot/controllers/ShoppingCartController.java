@@ -7,7 +7,6 @@ import com.appdynamicspilot.model.*;
 import com.appdynamicspilot.service.CartService;
 import com.appdynamicspilot.service.ItemService;
 import com.appdynamicspilot.util.ArgumentUtils;
-import com.opensymphony.xwork2.ActionContext;
 import org.apache.commons.validator.routines.CreditCardValidator;
 import org.apache.log4j.Logger;
 import org.tempuri.OrderDetail;
@@ -45,6 +44,16 @@ public class ShoppingCartController implements Serializable {
     private CustomerMessageProducer customerMessageProducer = null;
 
     private boolean confirmedShippingAddress = false;
+    private Item selectedItem;
+
+    public Item getSelectedItem() {
+        return selectedItem;
+    }
+
+
+    public void setSelectedItem(Item selectedItem) {
+        this.selectedItem = selectedItem;
+    }
 
     private Cart cart = null;
     private StoreOrder order = null;
@@ -54,10 +63,21 @@ public class ShoppingCartController implements Serializable {
 
     }
 
+    public String details() {
+        return "product_details.xhtml";
+    }
 
     public void addToCart() {
         Map<String, String> requestMap = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
-        Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
+
+        if (Math.random() <= 0.05) {
+            log.info("Number of items in inventory : 0, item is A Clockwork Orange");
+            log.error("Unable to add item to cart");
+        } else {
+            Integer itemCount = (int) Math.ceil(Math.random() * 100);
+            log.info("Number of items in inventory : " + itemCount);
+        }
+
         String itemId = requestMap.get("itemId");
         Item item = null;
         if ((itemId != null) && (!"".equals(itemId))) {
