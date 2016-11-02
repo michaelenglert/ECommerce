@@ -299,6 +299,36 @@ public class CartAction extends ActionSupport implements Preparable,
         return "ENDPAGE";
     }
 
+    /**
+     * Add by rbolton for new pages to be used in checkout flow
+     * They don't do anything interesting, just used for funnel analysis in browser analytics
+     * Adding database query so they look somewhat realistic...
+     */
+    public String address() {
+        List<Item> cartsList = cartService.getAllItemsByUser(new Long(1));
+        return "SUCCESS";
+    }
+
+    /**
+     * Add by rbolton for new pages to be used in checkout flow
+     * They don't do anything interesting, just used for funnel analysis in browser analytics
+     * Adding database query so they look somewhat realistic...
+     */
+    public String paymentinfo() {
+        List<Item> cartsList = cartService.getAllItemsByUser(new Long(1));
+        return "SUCCESS";
+    }
+
+    /**
+     * Add by rbolton for new pages to be used in checkout flow
+     * They don't do anything interesting, just used for funnel analysis in browser analytics
+     * Adding database query so they look somewhat realistic...
+     */
+    public String confirmorder() {
+        List<Item> cartsList = cartService.getAllItemsByUser(new Long(1));
+        return "SUCCESS";
+    }
+
     public void prepare() throws Exception {
     }
 
