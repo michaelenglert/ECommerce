@@ -40,6 +40,10 @@ import org.tempuri.OrderDetail;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -198,10 +202,6 @@ public class CartAction extends ActionSupport implements Preparable,
     public String sendItems() {
         try {
 
-			if (Math.random() >= 0.85) {
-                log.error("Unable to create order");
-            }
-
             String fakeAmount = (String) ActionContext.getContext().get("orderAmount");
             User user = (User) ActionContext.getContext().getSession()
                     .get("USER");
@@ -293,6 +293,26 @@ public class CartAction extends ActionSupport implements Preparable,
             cart = new Cart();
             cart.setUser(user);
             ActionContext.getContext().getSession().put("CART", cart);
+
+            //HTTP exit call which returns 500 and triggers error at random...
+            String trigger = "responsetime:0;statuscode:0";
+            if (Math.random() >= 0.85) {
+                trigger = "responsetime:0;statuscode:2";
+                //log.error("Unable to create order");
+            }
+
+            URL url = new URL("http://api.shipping.com:3000/checkInventory/id/46212");
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();
+            con.setRequestProperty("x-appd-demo", trigger);
+
+            BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+            String inputLine;
+            StringBuffer response = new StringBuffer();
+
+            while ((inputLine = in.readLine()) != null) {
+                response.append(inputLine);
+            }
+            in.close();
         } catch (Exception e) {
             log.error(e.getMessage());
         }
