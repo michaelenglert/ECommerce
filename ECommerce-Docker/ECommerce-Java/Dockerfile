@@ -17,5 +17,4 @@ RUN rpm -Uvh /jdk-linux-x64.rpm
 
 RUN rm jdk-linux-x64.rpm
 ENV JAVA_HOME /usr/java/default
-ENV APPDYNAMICS_SIM_ENABLED true
 ENV PATH $PATH:$JAVA_HOME/bin
