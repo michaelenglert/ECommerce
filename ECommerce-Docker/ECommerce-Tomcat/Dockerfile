@@ -1,4 +1,4 @@
-FROM appddemo/ecommerce-java:16.08.02
+FROM appddemo/ecommerce-java
 
 RUN export TERM=xterm
 

@@ -1,4 +1,4 @@
-FROM appddemo/ecommerce-java:16.08.02
+FROM appddemo/ecommerce-java
 
 # set timezone to UTC
 RUN mv /etc/localtime /etc/localtime.bak
