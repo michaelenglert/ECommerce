@@ -1,3 +1,0 @@
-
-<!-- enable dbcam integration for APPD4DB. -->
-<property name="jdbc-dbcam-integration-enabled" value="true"/>

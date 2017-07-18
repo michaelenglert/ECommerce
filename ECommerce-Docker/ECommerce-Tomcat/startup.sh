@@ -26,4 +26,4 @@ fi
 # /start-machine-agent.sh
 
 # Start App Server Agent
-/start-appserver-agent.sh
+/start-appserver.sh

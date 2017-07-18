@@ -20,10 +20,6 @@ RUN tar zxf /apache-tomcat.tar.gz \
     && mv apache-tomcat* tomcat
 RUN cd ${CATALINA_HOME}/bin;chmod +x *.sh
 
-# App Server Agent Install
-ADD AppServerAgent.zip /
-RUN unzip -q /AppServerAgent.zip -d ${CATALINA_HOME}/appagent;rm AppServerAgent.zip
-
 RUN mkdir -p /ECommerce-Java/ECommerce-Web/build/libs
 RUN mkdir -p /ECommerce-Java/ECommerce-JMS/build/libs
 RUN mkdir -p /ECommerce-Java/ECommerce-WS/build/libs
@@ -43,16 +39,10 @@ ADD zips.sql /ECommerce-Java/
 
 # Startup scripts
 ADD startup.sh /
-RUN version=`find ${CATALINA_HOME}/appagent -maxdepth 1 -type d -name "ver*" | sed "s:^${CATALINA_HOME}/appagent/::"`; \
-    sed -e "s:_VERSION_STRING:$version:g" env.sh > env.sh.tmp && mv env.sh.tmp env.sh
-ADD start-machine-agent.sh /
-ADD start-appserver-agent.sh /
-ADD app-agent-config-dbcam.xml /
+ADD start-appserver.sh /
 
 RUN chmod +x /startup.sh
-RUN chmod +x /start-machine-agent.sh
-RUN chmod +x /start-appserver-agent.sh
-#RUN chmod +x /configAnalytics.sh
+RUN chmod +x /start-appserver.sh
 
 RUN export TERM=xterm
 
