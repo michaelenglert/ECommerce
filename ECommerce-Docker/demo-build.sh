@@ -23,4 +23,3 @@ echo "Files copied over"
 
 cd ECommerce-LBR && docker build --no-cache -t appddemo/ecommerce-lbr .
 cd ../ECommerce-Tomcat && docker build --no-cache -t appddemo/ecommerce-tomcat .
-cd ../ECommerce-MachineAgent && docker build --no-cache -t appddemo/machineagent-analytics .
