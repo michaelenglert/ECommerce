@@ -1,3 +1,0 @@
-#! /bin/bash
-source ${NATIVE_HOME}/env.sh
-tail -f ${HTTPD_24}/logs/error_log
